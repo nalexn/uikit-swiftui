@@ -23,10 +23,26 @@
 		F64C4E6B250D358700A69FF9 /* LoginStageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E6A250D358700A69FF9 /* LoginStageContainer.swift */; };
 		F64C4E6D250D362800A69FF9 /* SessionStageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E6C250D362800A69FF9 /* SessionStageContainer.swift */; };
 		F64C4E6F250D369500A69FF9 /* ContainerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E6E250D369500A69FF9 /* ContainerProtocols.swift */; };
+		F64C4E72250D3C9E00A69FF9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E56250D27A800A69FF9 /* User.swift */; };
+		F64C4E73250D3C9E00A69FF9 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E41250D246700A69FF9 /* RootViewController.swift */; };
+		F64C4E74250D3C9E00A69FF9 /* SwiftHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E61250D2DF000A69FF9 /* SwiftHelpers.swift */; };
+		F64C4E75250D3C9E00A69FF9 /* ContainerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E6E250D369500A69FF9 /* ContainerProtocols.swift */; };
+		F64C4E76250D3C9E00A69FF9 /* TransactionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E53250D276E00A69FF9 /* TransactionsService.swift */; };
+		F64C4E77250D3C9E00A69FF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E3D250D246700A69FF9 /* AppDelegate.swift */; };
+		F64C4E78250D3C9E00A69FF9 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E58250D27C800A69FF9 /* Transaction.swift */; };
+		F64C4E79250D3C9E00A69FF9 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E65250D2FC400A69FF9 /* UserService.swift */; };
+		F64C4E7A250D3C9E00A69FF9 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E5C250D27FB00A69FF9 /* AuthService.swift */; };
+		F64C4E7B250D3C9E00A69FF9 /* LoginStageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E6A250D358700A69FF9 /* LoginStageContainer.swift */; };
+		F64C4E7C250D3C9E00A69FF9 /* ServiceProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E67250D326C00A69FF9 /* ServiceProtocols.swift */; };
+		F64C4E7D250D3C9E00A69FF9 /* SessionStageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E6C250D362800A69FF9 /* SessionStageContainer.swift */; };
+		F64C4E7E250D3C9E00A69FF9 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E5F250D286B00A69FF9 /* Promise.swift */; };
+		F64C4E7F250D3C9E00A69FF9 /* AuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E63250D2F9500A69FF9 /* AuthToken.swift */; };
+		F64C4E82250D3C9E00A69FF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F64C4E48250D246C00A69FF9 /* LaunchScreen.storyboard */; };
+		F64C4E83250D3C9E00A69FF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F64C4E46250D246C00A69FF9 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F64C4E3A250D246700A69FF9 /* UIKitToSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitToSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F64C4E3A250D246700A69FF9 /* UIKitApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F64C4E3D250D246700A69FF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F64C4E41250D246700A69FF9 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		F64C4E46250D246C00A69FF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -44,10 +60,18 @@
 		F64C4E6A250D358700A69FF9 /* LoginStageContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginStageContainer.swift; sourceTree = "<group>"; };
 		F64C4E6C250D362800A69FF9 /* SessionStageContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStageContainer.swift; sourceTree = "<group>"; };
 		F64C4E6E250D369500A69FF9 /* ContainerProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerProtocols.swift; sourceTree = "<group>"; };
+		F64C4E87250D3C9E00A69FF9 /* SwiftUIApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		F64C4E37250D246700A69FF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F64C4E80250D3C9E00A69FF9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -68,7 +92,8 @@
 		F64C4E3B250D246700A69FF9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F64C4E3A250D246700A69FF9 /* UIKitToSwiftUI.app */,
+				F64C4E3A250D246700A69FF9 /* UIKitApp.app */,
+				F64C4E87250D3C9E00A69FF9 /* SwiftUIApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,9 +165,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F64C4E39250D246700A69FF9 /* UIKitToSwiftUI */ = {
+		F64C4E39250D246700A69FF9 /* UIKitApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F64C4E4E250D246C00A69FF9 /* Build configuration list for PBXNativeTarget "UIKitToSwiftUI" */;
+			buildConfigurationList = F64C4E4E250D246C00A69FF9 /* Build configuration list for PBXNativeTarget "UIKitApp" */;
 			buildPhases = (
 				F64C4E36250D246700A69FF9 /* Sources */,
 				F64C4E37250D246700A69FF9 /* Frameworks */,
@@ -152,9 +177,26 @@
 			);
 			dependencies = (
 			);
-			name = UIKitToSwiftUI;
+			name = UIKitApp;
 			productName = UIKitToSwiftUI;
-			productReference = F64C4E3A250D246700A69FF9 /* UIKitToSwiftUI.app */;
+			productReference = F64C4E3A250D246700A69FF9 /* UIKitApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F64C4E70250D3C9E00A69FF9 /* SwiftUIApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F64C4E84250D3C9E00A69FF9 /* Build configuration list for PBXNativeTarget "SwiftUIApp" */;
+			buildPhases = (
+				F64C4E71250D3C9E00A69FF9 /* Sources */,
+				F64C4E80250D3C9E00A69FF9 /* Frameworks */,
+				F64C4E81250D3C9E00A69FF9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftUIApp;
+			productName = UIKitToSwiftUI;
+			productReference = F64C4E87250D3C9E00A69FF9 /* SwiftUIApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -185,7 +227,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F64C4E39250D246700A69FF9 /* UIKitToSwiftUI */,
+				F64C4E39250D246700A69FF9 /* UIKitApp */,
+				F64C4E70250D3C9E00A69FF9 /* SwiftUIApp */,
 			);
 		};
 /* End PBXProject section */
@@ -197,6 +240,15 @@
 			files = (
 				F64C4E4A250D246C00A69FF9 /* LaunchScreen.storyboard in Resources */,
 				F64C4E47250D246C00A69FF9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F64C4E81250D3C9E00A69FF9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F64C4E82250D3C9E00A69FF9 /* LaunchScreen.storyboard in Resources */,
+				F64C4E83250D3C9E00A69FF9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +273,27 @@
 				F64C4E6D250D362800A69FF9 /* SessionStageContainer.swift in Sources */,
 				F64C4E60250D286B00A69FF9 /* Promise.swift in Sources */,
 				F64C4E64250D2F9500A69FF9 /* AuthToken.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F64C4E71250D3C9E00A69FF9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F64C4E72250D3C9E00A69FF9 /* User.swift in Sources */,
+				F64C4E73250D3C9E00A69FF9 /* RootViewController.swift in Sources */,
+				F64C4E74250D3C9E00A69FF9 /* SwiftHelpers.swift in Sources */,
+				F64C4E75250D3C9E00A69FF9 /* ContainerProtocols.swift in Sources */,
+				F64C4E76250D3C9E00A69FF9 /* TransactionsService.swift in Sources */,
+				F64C4E77250D3C9E00A69FF9 /* AppDelegate.swift in Sources */,
+				F64C4E78250D3C9E00A69FF9 /* Transaction.swift in Sources */,
+				F64C4E79250D3C9E00A69FF9 /* UserService.swift in Sources */,
+				F64C4E7A250D3C9E00A69FF9 /* AuthService.swift in Sources */,
+				F64C4E7B250D3C9E00A69FF9 /* LoginStageContainer.swift in Sources */,
+				F64C4E7C250D3C9E00A69FF9 /* ServiceProtocols.swift in Sources */,
+				F64C4E7D250D3C9E00A69FF9 /* SessionStageContainer.swift in Sources */,
+				F64C4E7E250D3C9E00A69FF9 /* Promise.swift in Sources */,
+				F64C4E7F250D3C9E00A69FF9 /* AuthToken.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +461,42 @@
 			};
 			name = Release;
 		};
+		F64C4E85250D3C9E00A69FF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = UIKitToSwiftUI/Assets/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.uikit.to.swiftui;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F64C4E86250D3C9E00A69FF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = UIKitToSwiftUI/Assets/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.uikit.to.swiftui;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -400,11 +509,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F64C4E4E250D246C00A69FF9 /* Build configuration list for PBXNativeTarget "UIKitToSwiftUI" */ = {
+		F64C4E4E250D246C00A69FF9 /* Build configuration list for PBXNativeTarget "UIKitApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F64C4E4F250D246C00A69FF9 /* Debug */,
 				F64C4E50250D246C00A69FF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F64C4E84250D3C9E00A69FF9 /* Build configuration list for PBXNativeTarget "SwiftUIApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F64C4E85250D3C9E00A69FF9 /* Debug */,
+				F64C4E86250D3C9E00A69FF9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
