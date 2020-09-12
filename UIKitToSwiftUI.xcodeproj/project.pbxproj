@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F61B6D2D250D4DDF00073270 /* Minimalist in Frameworks */ = {isa = PBXBuildFile; productRef = F61B6D2C250D4DDF00073270 /* Minimalist */; };
 		F61B6D2F250D5D7700073270 /* LoginViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B6D2E250D5D7700073270 /* LoginViewCoordinator.swift */; };
 		F61B6D30250D5D7700073270 /* LoginViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B6D2E250D5D7700073270 /* LoginViewCoordinator.swift */; };
 		F61B6D32250D5FDA00073270 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B6D31250D5FDA00073270 /* Coordinator.swift */; };
@@ -17,6 +16,10 @@
 		F61B6D3A250D69F100073270 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B6D39250D69F100073270 /* LoginViewController.swift */; };
 		F61B6D3D250D6AA500073270 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F61B6D3C250D6AA500073270 /* LoginViewController.xib */; };
 		F61B6D3F250D6DD100073270 /* UIKitHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B6D3E250D6DD100073270 /* UIKitHelpers.swift */; };
+		F61B6D42250D70C000073270 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B6D41250D70C000073270 /* LoginViewController.swift */; };
+		F61B6D43250D71AA00073270 /* UIKitHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B6D3E250D6DD100073270 /* UIKitHelpers.swift */; };
+		F61B6D48250D72B400073270 /* PropertyAndSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B6D47250D72B400073270 /* PropertyAndSignal.swift */; };
+		F61B6D49250D72B400073270 /* PropertyAndSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B6D47250D72B400073270 /* PropertyAndSignal.swift */; };
 		F64C4E3E250D246700A69FF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E3D250D246700A69FF9 /* AppDelegate.swift */; };
 		F64C4E42250D246700A69FF9 /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E41250D246700A69FF9 /* RootCoordinator.swift */; };
 		F64C4E47250D246C00A69FF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F64C4E46250D246C00A69FF9 /* Assets.xcassets */; };
@@ -62,6 +65,8 @@
 		F61B6D39250D69F100073270 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F61B6D3C250D6AA500073270 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		F61B6D3E250D6DD100073270 /* UIKitHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitHelpers.swift; sourceTree = "<group>"; };
+		F61B6D41250D70C000073270 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F61B6D47250D72B400073270 /* PropertyAndSignal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyAndSignal.swift; sourceTree = "<group>"; };
 		F64C4E3A250D246700A69FF9 /* UIKitApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F64C4E3D250D246700A69FF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F64C4E41250D246700A69FF9 /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
@@ -90,7 +95,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F61B6D2D250D4DDF00073270 /* Minimalist in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +123,14 @@
 				F61B6D3C250D6AA500073270 /* LoginViewController.xib */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		F61B6D40250D70A400073270 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				F61B6D41250D70C000073270 /* LoginViewController.swift */,
+			);
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 		F64C4E31250D246700A69FF9 = {
@@ -192,6 +204,7 @@
 				F64C4E5F250D286B00A69FF9 /* Promise.swift */,
 				F64C4E90250D431300A69FF9 /* Loadable.swift */,
 				F61B6D31250D5FDA00073270 /* Coordinator.swift */,
+				F61B6D47250D72B400073270 /* PropertyAndSignal.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -221,6 +234,7 @@
 				F64C4E8D250D3F7600A69FF9 /* LoginViewModel.swift */,
 				F61B6D2E250D5D7700073270 /* LoginViewCoordinator.swift */,
 				F61B6D38250D69DB00073270 /* UIKit */,
+				F61B6D40250D70A400073270 /* SwiftUI */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -242,7 +256,6 @@
 			);
 			name = UIKitApp;
 			packageProductDependencies = (
-				F61B6D2C250D4DDF00073270 /* Minimalist */,
 			);
 			productName = UIKitToSwiftUI;
 			productReference = F64C4E3A250D246700A69FF9 /* UIKitApp.app */;
@@ -290,7 +303,6 @@
 			);
 			mainGroup = F64C4E31250D246700A69FF9;
 			packageReferences = (
-				F61B6D2B250D4DDF00073270 /* XCRemoteSwiftPackageReference "minimalist" */,
 			);
 			productRefGroup = F64C4E3B250D246700A69FF9 /* Products */;
 			projectDirPath = "";
@@ -343,6 +355,7 @@
 				F64C4E5D250D27FB00A69FF9 /* AuthService.swift in Sources */,
 				F61B6D2F250D5D7700073270 /* LoginViewCoordinator.swift in Sources */,
 				F64C4E6B250D358700A69FF9 /* LoginStageContainer.swift in Sources */,
+				F61B6D48250D72B400073270 /* PropertyAndSignal.swift in Sources */,
 				F61B6D36250D65D800073270 /* HomeViewCoordinator.swift in Sources */,
 				F64C4E68250D326C00A69FF9 /* ServiceProtocols.swift in Sources */,
 				F64C4E6D250D362800A69FF9 /* SessionStageContainer.swift in Sources */,
@@ -365,14 +378,17 @@
 				F64C4E77250D3C9E00A69FF9 /* AppDelegate.swift in Sources */,
 				F64C4E78250D3C9E00A69FF9 /* Transaction.swift in Sources */,
 				F64C4E79250D3C9E00A69FF9 /* UserService.swift in Sources */,
+				F61B6D42250D70C000073270 /* LoginViewController.swift in Sources */,
 				F61B6D33250D5FDA00073270 /* Coordinator.swift in Sources */,
 				F64C4E8F250D3F7600A69FF9 /* LoginViewModel.swift in Sources */,
 				F64C4E7A250D3C9E00A69FF9 /* AuthService.swift in Sources */,
 				F61B6D30250D5D7700073270 /* LoginViewCoordinator.swift in Sources */,
 				F64C4E7B250D3C9E00A69FF9 /* LoginStageContainer.swift in Sources */,
+				F61B6D49250D72B400073270 /* PropertyAndSignal.swift in Sources */,
 				F61B6D37250D65D800073270 /* HomeViewCoordinator.swift in Sources */,
 				F64C4E7C250D3C9E00A69FF9 /* ServiceProtocols.swift in Sources */,
 				F64C4E7D250D3C9E00A69FF9 /* SessionStageContainer.swift in Sources */,
+				F61B6D43250D71AA00073270 /* UIKitHelpers.swift in Sources */,
 				F64C4E92250D431300A69FF9 /* Loadable.swift in Sources */,
 				F64C4E7E250D3C9E00A69FF9 /* Promise.swift in Sources */,
 				F64C4E7F250D3C9E00A69FF9 /* AuthToken.swift in Sources */,
@@ -610,25 +626,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		F61B6D2B250D4DDF00073270 /* XCRemoteSwiftPackageReference "minimalist" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/nalexn/minimalist";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		F61B6D2C250D4DDF00073270 /* Minimalist */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F61B6D2B250D4DDF00073270 /* XCRemoteSwiftPackageReference "minimalist" */;
-			productName = Minimalist;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F64C4E32250D246700A69FF9 /* Project object */;
 }

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Minimalist
 
 final class HomeViewCoordinator: BaseCoordinator {
     
