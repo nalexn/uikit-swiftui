@@ -3,12 +3,22 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F61B6D2D250D4DDF00073270 /* Minimalist in Frameworks */ = {isa = PBXBuildFile; productRef = F61B6D2C250D4DDF00073270 /* Minimalist */; };
+		F61B6D2F250D5D7700073270 /* LoginViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B6D2E250D5D7700073270 /* LoginViewCoordinator.swift */; };
+		F61B6D30250D5D7700073270 /* LoginViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B6D2E250D5D7700073270 /* LoginViewCoordinator.swift */; };
+		F61B6D32250D5FDA00073270 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B6D31250D5FDA00073270 /* Coordinator.swift */; };
+		F61B6D33250D5FDA00073270 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B6D31250D5FDA00073270 /* Coordinator.swift */; };
+		F61B6D36250D65D800073270 /* HomeViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B6D35250D65D800073270 /* HomeViewCoordinator.swift */; };
+		F61B6D37250D65D800073270 /* HomeViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B6D35250D65D800073270 /* HomeViewCoordinator.swift */; };
+		F61B6D3A250D69F100073270 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B6D39250D69F100073270 /* LoginViewController.swift */; };
+		F61B6D3D250D6AA500073270 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F61B6D3C250D6AA500073270 /* LoginViewController.xib */; };
+		F61B6D3F250D6DD100073270 /* UIKitHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B6D3E250D6DD100073270 /* UIKitHelpers.swift */; };
 		F64C4E3E250D246700A69FF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E3D250D246700A69FF9 /* AppDelegate.swift */; };
-		F64C4E42250D246700A69FF9 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E41250D246700A69FF9 /* RootViewController.swift */; };
+		F64C4E42250D246700A69FF9 /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E41250D246700A69FF9 /* RootCoordinator.swift */; };
 		F64C4E47250D246C00A69FF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F64C4E46250D246C00A69FF9 /* Assets.xcassets */; };
 		F64C4E4A250D246C00A69FF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F64C4E48250D246C00A69FF9 /* LaunchScreen.storyboard */; };
 		F64C4E54250D276E00A69FF9 /* TransactionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E53250D276E00A69FF9 /* TransactionsService.swift */; };
@@ -24,7 +34,7 @@
 		F64C4E6D250D362800A69FF9 /* SessionStageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E6C250D362800A69FF9 /* SessionStageContainer.swift */; };
 		F64C4E6F250D369500A69FF9 /* ContainerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E6E250D369500A69FF9 /* ContainerProtocols.swift */; };
 		F64C4E72250D3C9E00A69FF9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E56250D27A800A69FF9 /* User.swift */; };
-		F64C4E73250D3C9E00A69FF9 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E41250D246700A69FF9 /* RootViewController.swift */; };
+		F64C4E73250D3C9E00A69FF9 /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E41250D246700A69FF9 /* RootCoordinator.swift */; };
 		F64C4E74250D3C9E00A69FF9 /* SwiftHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E61250D2DF000A69FF9 /* SwiftHelpers.swift */; };
 		F64C4E75250D3C9E00A69FF9 /* ContainerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E6E250D369500A69FF9 /* ContainerProtocols.swift */; };
 		F64C4E76250D3C9E00A69FF9 /* TransactionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E53250D276E00A69FF9 /* TransactionsService.swift */; };
@@ -39,12 +49,22 @@
 		F64C4E7F250D3C9E00A69FF9 /* AuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E63250D2F9500A69FF9 /* AuthToken.swift */; };
 		F64C4E82250D3C9E00A69FF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F64C4E48250D246C00A69FF9 /* LaunchScreen.storyboard */; };
 		F64C4E83250D3C9E00A69FF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F64C4E46250D246C00A69FF9 /* Assets.xcassets */; };
+		F64C4E8E250D3F7600A69FF9 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E8D250D3F7600A69FF9 /* LoginViewModel.swift */; };
+		F64C4E8F250D3F7600A69FF9 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E8D250D3F7600A69FF9 /* LoginViewModel.swift */; };
+		F64C4E91250D431300A69FF9 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E90250D431300A69FF9 /* Loadable.swift */; };
+		F64C4E92250D431300A69FF9 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E90250D431300A69FF9 /* Loadable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F61B6D2E250D5D7700073270 /* LoginViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewCoordinator.swift; sourceTree = "<group>"; };
+		F61B6D31250D5FDA00073270 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		F61B6D35250D65D800073270 /* HomeViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCoordinator.swift; sourceTree = "<group>"; };
+		F61B6D39250D69F100073270 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F61B6D3C250D6AA500073270 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		F61B6D3E250D6DD100073270 /* UIKitHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitHelpers.swift; sourceTree = "<group>"; };
 		F64C4E3A250D246700A69FF9 /* UIKitApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F64C4E3D250D246700A69FF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F64C4E41250D246700A69FF9 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		F64C4E41250D246700A69FF9 /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
 		F64C4E46250D246C00A69FF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F64C4E49250D246C00A69FF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F64C4E4B250D246C00A69FF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,6 +81,8 @@
 		F64C4E6C250D362800A69FF9 /* SessionStageContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStageContainer.swift; sourceTree = "<group>"; };
 		F64C4E6E250D369500A69FF9 /* ContainerProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerProtocols.swift; sourceTree = "<group>"; };
 		F64C4E87250D3C9E00A69FF9 /* SwiftUIApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F64C4E8D250D3F7600A69FF9 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		F64C4E90250D431300A69FF9 /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F61B6D2D250D4DDF00073270 /* Minimalist in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +104,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F61B6D34250D65BB00073270 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F61B6D35250D65D800073270 /* HomeViewCoordinator.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F61B6D38250D69DB00073270 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				F61B6D39250D69F100073270 /* LoginViewController.swift */,
+				F61B6D3C250D6AA500073270 /* LoginViewController.xib */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
 		F64C4E31250D246700A69FF9 = {
 			isa = PBXGroup;
 			children = (
@@ -102,7 +142,8 @@
 			isa = PBXGroup;
 			children = (
 				F64C4E3D250D246700A69FF9 /* AppDelegate.swift */,
-				F64C4E41250D246700A69FF9 /* RootViewController.swift */,
+				F64C4E41250D246700A69FF9 /* RootCoordinator.swift */,
+				F64C4E8B250D3F3B00A69FF9 /* Screens */,
 				F64C4E55250D277600A69FF9 /* DataModels */,
 				F64C4E52250D270C00A69FF9 /* Services */,
 				F64C4E69250D351000A69FF9 /* DIContainers */,
@@ -147,7 +188,10 @@
 			isa = PBXGroup;
 			children = (
 				F64C4E61250D2DF000A69FF9 /* SwiftHelpers.swift */,
+				F61B6D3E250D6DD100073270 /* UIKitHelpers.swift */,
 				F64C4E5F250D286B00A69FF9 /* Promise.swift */,
+				F64C4E90250D431300A69FF9 /* Loadable.swift */,
+				F61B6D31250D5FDA00073270 /* Coordinator.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -160,6 +204,25 @@
 				F64C4E6C250D362800A69FF9 /* SessionStageContainer.swift */,
 			);
 			path = DIContainers;
+			sourceTree = "<group>";
+		};
+		F64C4E8B250D3F3B00A69FF9 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				F64C4E8C250D3F4F00A69FF9 /* Login */,
+				F61B6D34250D65BB00073270 /* Home */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		F64C4E8C250D3F4F00A69FF9 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F64C4E8D250D3F7600A69FF9 /* LoginViewModel.swift */,
+				F61B6D2E250D5D7700073270 /* LoginViewCoordinator.swift */,
+				F61B6D38250D69DB00073270 /* UIKit */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,6 +241,9 @@
 			dependencies = (
 			);
 			name = UIKitApp;
+			packageProductDependencies = (
+				F61B6D2C250D4DDF00073270 /* Minimalist */,
+			);
 			productName = UIKitToSwiftUI;
 			productReference = F64C4E3A250D246700A69FF9 /* UIKitApp.app */;
 			productType = "com.apple.product-type.application";
@@ -223,6 +289,9 @@
 				Base,
 			);
 			mainGroup = F64C4E31250D246700A69FF9;
+			packageReferences = (
+				F61B6D2B250D4DDF00073270 /* XCRemoteSwiftPackageReference "minimalist" */,
+			);
 			productRefGroup = F64C4E3B250D246700A69FF9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -240,6 +309,7 @@
 			files = (
 				F64C4E4A250D246C00A69FF9 /* LaunchScreen.storyboard in Resources */,
 				F64C4E47250D246C00A69FF9 /* Assets.xcassets in Resources */,
+				F61B6D3D250D6AA500073270 /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,17 +330,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				F64C4E57250D27A800A69FF9 /* User.swift in Sources */,
-				F64C4E42250D246700A69FF9 /* RootViewController.swift in Sources */,
+				F64C4E42250D246700A69FF9 /* RootCoordinator.swift in Sources */,
 				F64C4E62250D2DF000A69FF9 /* SwiftHelpers.swift in Sources */,
 				F64C4E6F250D369500A69FF9 /* ContainerProtocols.swift in Sources */,
 				F64C4E54250D276E00A69FF9 /* TransactionsService.swift in Sources */,
 				F64C4E3E250D246700A69FF9 /* AppDelegate.swift in Sources */,
 				F64C4E59250D27C800A69FF9 /* Transaction.swift in Sources */,
 				F64C4E66250D2FC400A69FF9 /* UserService.swift in Sources */,
+				F61B6D3A250D69F100073270 /* LoginViewController.swift in Sources */,
+				F61B6D32250D5FDA00073270 /* Coordinator.swift in Sources */,
+				F64C4E8E250D3F7600A69FF9 /* LoginViewModel.swift in Sources */,
 				F64C4E5D250D27FB00A69FF9 /* AuthService.swift in Sources */,
+				F61B6D2F250D5D7700073270 /* LoginViewCoordinator.swift in Sources */,
 				F64C4E6B250D358700A69FF9 /* LoginStageContainer.swift in Sources */,
+				F61B6D36250D65D800073270 /* HomeViewCoordinator.swift in Sources */,
 				F64C4E68250D326C00A69FF9 /* ServiceProtocols.swift in Sources */,
 				F64C4E6D250D362800A69FF9 /* SessionStageContainer.swift in Sources */,
+				F61B6D3F250D6DD100073270 /* UIKitHelpers.swift in Sources */,
+				F64C4E91250D431300A69FF9 /* Loadable.swift in Sources */,
 				F64C4E60250D286B00A69FF9 /* Promise.swift in Sources */,
 				F64C4E64250D2F9500A69FF9 /* AuthToken.swift in Sources */,
 			);
@@ -281,17 +358,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				F64C4E72250D3C9E00A69FF9 /* User.swift in Sources */,
-				F64C4E73250D3C9E00A69FF9 /* RootViewController.swift in Sources */,
+				F64C4E73250D3C9E00A69FF9 /* RootCoordinator.swift in Sources */,
 				F64C4E74250D3C9E00A69FF9 /* SwiftHelpers.swift in Sources */,
 				F64C4E75250D3C9E00A69FF9 /* ContainerProtocols.swift in Sources */,
 				F64C4E76250D3C9E00A69FF9 /* TransactionsService.swift in Sources */,
 				F64C4E77250D3C9E00A69FF9 /* AppDelegate.swift in Sources */,
 				F64C4E78250D3C9E00A69FF9 /* Transaction.swift in Sources */,
 				F64C4E79250D3C9E00A69FF9 /* UserService.swift in Sources */,
+				F61B6D33250D5FDA00073270 /* Coordinator.swift in Sources */,
+				F64C4E8F250D3F7600A69FF9 /* LoginViewModel.swift in Sources */,
 				F64C4E7A250D3C9E00A69FF9 /* AuthService.swift in Sources */,
+				F61B6D30250D5D7700073270 /* LoginViewCoordinator.swift in Sources */,
 				F64C4E7B250D3C9E00A69FF9 /* LoginStageContainer.swift in Sources */,
+				F61B6D37250D65D800073270 /* HomeViewCoordinator.swift in Sources */,
 				F64C4E7C250D3C9E00A69FF9 /* ServiceProtocols.swift in Sources */,
 				F64C4E7D250D3C9E00A69FF9 /* SessionStageContainer.swift in Sources */,
+				F64C4E92250D431300A69FF9 /* Loadable.swift in Sources */,
 				F64C4E7E250D3C9E00A69FF9 /* Promise.swift in Sources */,
 				F64C4E7F250D3C9E00A69FF9 /* AuthToken.swift in Sources */,
 			);
@@ -528,6 +610,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F61B6D2B250D4DDF00073270 /* XCRemoteSwiftPackageReference "minimalist" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nalexn/minimalist";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F61B6D2C250D4DDF00073270 /* Minimalist */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F61B6D2B250D4DDF00073270 /* XCRemoteSwiftPackageReference "minimalist" */;
+			productName = Minimalist;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F64C4E32250D246700A69FF9 /* Project object */;
 }

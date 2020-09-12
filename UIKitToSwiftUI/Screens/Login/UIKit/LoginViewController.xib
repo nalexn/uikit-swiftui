@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="UIKitApp" customModuleProvider="target">
+            <connections>
+                <outlet property="logInButton" destination="i6N-wg-xAo" id="bZX-0N-26w"/>
+                <outlet property="loginField" destination="Sui-eq-eSX" id="HpX-5R-FA8"/>
+                <outlet property="passwordField" destination="EjQ-3S-fea" id="64p-61-03M"/>
+                <outlet property="view" destination="iN0-l3-epB" id="nZa-xU-cKs"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sui-eq-eSX">
+                    <rect key="frame" x="107" y="341" width="200" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="PN9-nD-jjd"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EjQ-3S-fea">
+                    <rect key="frame" x="107" y="383" width="200" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i6N-wg-xAo">
+                    <rect key="frame" x="107" y="448" width="200" height="30"/>
+                    <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <state key="normal" title="Log In"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="handleLogInButtonPressed" destination="-1" eventType="touchUpInside" id="NKE-5d-gfO"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="i6N-wg-xAo" firstAttribute="width" secondItem="EjQ-3S-fea" secondAttribute="width" id="4Km-NA-Iyq"/>
+                <constraint firstItem="EjQ-3S-fea" firstAttribute="width" secondItem="Sui-eq-eSX" secondAttribute="width" id="GR3-qj-XRP"/>
+                <constraint firstItem="EjQ-3S-fea" firstAttribute="centerX" secondItem="Sui-eq-eSX" secondAttribute="centerX" id="K2l-gl-JCX"/>
+                <constraint firstItem="i6N-wg-xAo" firstAttribute="top" secondItem="EjQ-3S-fea" secondAttribute="bottom" constant="31" id="KVe-mQ-fSP"/>
+                <constraint firstItem="EjQ-3S-fea" firstAttribute="top" secondItem="Sui-eq-eSX" secondAttribute="bottom" constant="8" id="eOj-WP-LqK"/>
+                <constraint firstItem="Sui-eq-eSX" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-90" id="fQx-EI-xku"/>
+                <constraint firstItem="i6N-wg-xAo" firstAttribute="centerX" secondItem="EjQ-3S-fea" secondAttribute="centerX" id="iDY-EK-yqm"/>
+                <constraint firstItem="Sui-eq-eSX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="nDT-GL-2Cu"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="137.68115942028987" y="141.96428571428569"/>
+        </view>
+    </objects>
+</document>
