@@ -8,12 +8,15 @@
 
 import SwiftUI
 import UIKit
+import Combine
 
 class LoginViewController: UIHostingController<LoginView> {
     
+    private let viewModel: LoginViewModel
+    
     init(viewModel: LoginViewModel) {
-        let _vm = LoginView.ViewModel()
-        super.init(rootView: LoginView(viewModel: _vm))
+        self.viewModel = viewModel
+        super.init(rootView: LoginView(viewModel: viewModel.adapt()))
     }
     
     @objc required dynamic init?(coder aDecoder: NSCoder) {
@@ -21,17 +24,29 @@ class LoginViewController: UIHostingController<LoginView> {
     }
 }
 
+extension LoginViewModel {
+    func adapt() -> LoginView.ViewModel {
+        let vm = LoginView.ViewModel()
+        vm.cancelBag.collect {
+            vm.$login.assign(to: \.login, on: self)
+            vm.$password.assign(to: \.password, on: self)
+            $isLoginButtonEnabled.assign(to: \.isLoginButtonEnabled, on: vm)
+        }
+        return vm
+    }
+}
+
 // MARK: - ObservableObject
 
 extension LoginView {
     class ViewModel: ObservableObject {
+        
         @Published var login: String = ""
         @Published var password: String = ""
-        @Published var loginButtonEnabled = false
+        @Published var isLoginButtonEnabled = false
+        var cancelBag = CancelBag()
         
-        func handleLoginButtonPressed() {
-            
-        }
+        let onLoginButtonPressed = PassthroughSubject<Void, Never>()
     }
 }
 
@@ -47,10 +62,10 @@ struct LoginView: View {
                 .modifier(TextFieldAppearance())
             TextField("Password", text: $viewModel.password)
                 .modifier(TextFieldAppearance())
-            Button(action: { self.viewModel.handleLoginButtonPressed() },
+            Button(action: { self.viewModel.onLoginButtonPressed.send(()) },
                    label: { Text("Log In").foregroundColor(Color(.systemBackground)) })
-                .modifier(LoginButtonAppearance())
-                .disabled(!viewModel.loginButtonEnabled)
+                .modifier(LoginButtonAppearance(isEnabled: $viewModel.isLoginButtonEnabled))
+                .disabled(!viewModel.isLoginButtonEnabled)
         }
         .frame(width: 200)
     }
@@ -58,6 +73,7 @@ struct LoginView: View {
 
 extension LoginView {
     struct TextFieldAppearance: ViewModifier {
+        
         func body(content: Content) -> some View {
             content
                 .padding(EdgeInsets(top: 2, leading: 4, bottom: 2, trailing: 4))
@@ -67,13 +83,16 @@ extension LoginView {
         }
     }
     struct LoginButtonAppearance: ViewModifier {
+        
+        @Binding var isEnabled: Bool
+        
         func body(content: Content) -> some View {
             content
                 .frame(maxWidth: .infinity)
                 .padding(EdgeInsets(top: 2, leading: 4, bottom: 2, trailing: 4))
                 .background(
                     RoundedRectangle(cornerRadius: 4)
-                        .fill(Color(.systemBlue)))
+                        .fill(Color(isEnabled ? .systemBlue : .systemGray)))
         }
     }
 }

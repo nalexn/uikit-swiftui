@@ -20,6 +20,7 @@
 		F61B6D43250D71AA00073270 /* UIKitHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B6D3E250D6DD100073270 /* UIKitHelpers.swift */; };
 		F61B6D48250D72B400073270 /* PropertyAndSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B6D47250D72B400073270 /* PropertyAndSignal.swift */; };
 		F61B6D49250D72B400073270 /* PropertyAndSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B6D47250D72B400073270 /* PropertyAndSignal.swift */; };
+		F61B6D4B250D82ED00073270 /* SwiftUIHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B6D4A250D82ED00073270 /* SwiftUIHelpers.swift */; };
 		F64C4E3E250D246700A69FF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E3D250D246700A69FF9 /* AppDelegate.swift */; };
 		F64C4E42250D246700A69FF9 /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E41250D246700A69FF9 /* RootCoordinator.swift */; };
 		F64C4E47250D246C00A69FF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F64C4E46250D246C00A69FF9 /* Assets.xcassets */; };
@@ -29,7 +30,6 @@
 		F64C4E59250D27C800A69FF9 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E58250D27C800A69FF9 /* Transaction.swift */; };
 		F64C4E5D250D27FB00A69FF9 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E5C250D27FB00A69FF9 /* AuthService.swift */; };
 		F64C4E60250D286B00A69FF9 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E5F250D286B00A69FF9 /* Promise.swift */; };
-		F64C4E62250D2DF000A69FF9 /* SwiftHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E61250D2DF000A69FF9 /* SwiftHelpers.swift */; };
 		F64C4E64250D2F9500A69FF9 /* AuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E63250D2F9500A69FF9 /* AuthToken.swift */; };
 		F64C4E66250D2FC400A69FF9 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E65250D2FC400A69FF9 /* UserService.swift */; };
 		F64C4E68250D326C00A69FF9 /* ServiceProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E67250D326C00A69FF9 /* ServiceProtocols.swift */; };
@@ -38,7 +38,6 @@
 		F64C4E6F250D369500A69FF9 /* ContainerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E6E250D369500A69FF9 /* ContainerProtocols.swift */; };
 		F64C4E72250D3C9E00A69FF9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E56250D27A800A69FF9 /* User.swift */; };
 		F64C4E73250D3C9E00A69FF9 /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E41250D246700A69FF9 /* RootCoordinator.swift */; };
-		F64C4E74250D3C9E00A69FF9 /* SwiftHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E61250D2DF000A69FF9 /* SwiftHelpers.swift */; };
 		F64C4E75250D3C9E00A69FF9 /* ContainerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E6E250D369500A69FF9 /* ContainerProtocols.swift */; };
 		F64C4E76250D3C9E00A69FF9 /* TransactionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E53250D276E00A69FF9 /* TransactionsService.swift */; };
 		F64C4E77250D3C9E00A69FF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E3D250D246700A69FF9 /* AppDelegate.swift */; };
@@ -67,6 +66,7 @@
 		F61B6D3E250D6DD100073270 /* UIKitHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitHelpers.swift; sourceTree = "<group>"; };
 		F61B6D41250D70C000073270 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F61B6D47250D72B400073270 /* PropertyAndSignal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyAndSignal.swift; sourceTree = "<group>"; };
+		F61B6D4A250D82ED00073270 /* SwiftUIHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIHelpers.swift; sourceTree = "<group>"; };
 		F64C4E3A250D246700A69FF9 /* UIKitApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F64C4E3D250D246700A69FF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F64C4E41250D246700A69FF9 /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
@@ -78,7 +78,6 @@
 		F64C4E58250D27C800A69FF9 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		F64C4E5C250D27FB00A69FF9 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		F64C4E5F250D286B00A69FF9 /* Promise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promise.swift; sourceTree = "<group>"; };
-		F64C4E61250D2DF000A69FF9 /* SwiftHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftHelpers.swift; sourceTree = "<group>"; };
 		F64C4E63250D2F9500A69FF9 /* AuthToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthToken.swift; sourceTree = "<group>"; };
 		F64C4E65250D2FC400A69FF9 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		F64C4E67250D326C00A69FF9 /* ServiceProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProtocols.swift; sourceTree = "<group>"; };
@@ -155,11 +154,11 @@
 			children = (
 				F64C4E3D250D246700A69FF9 /* AppDelegate.swift */,
 				F64C4E41250D246700A69FF9 /* RootCoordinator.swift */,
-				F64C4E8B250D3F3B00A69FF9 /* Screens */,
 				F64C4E55250D277600A69FF9 /* DataModels */,
 				F64C4E52250D270C00A69FF9 /* Services */,
 				F64C4E69250D351000A69FF9 /* DIContainers */,
 				F64C4E5E250D285400A69FF9 /* Utils */,
+				F64C4E8B250D3F3B00A69FF9 /* Screens */,
 				F64C4E51250D248900A69FF9 /* Assets */,
 			);
 			path = UIKitToSwiftUI;
@@ -199,12 +198,12 @@
 		F64C4E5E250D285400A69FF9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				F64C4E61250D2DF000A69FF9 /* SwiftHelpers.swift */,
-				F61B6D3E250D6DD100073270 /* UIKitHelpers.swift */,
 				F64C4E5F250D286B00A69FF9 /* Promise.swift */,
 				F64C4E90250D431300A69FF9 /* Loadable.swift */,
 				F61B6D31250D5FDA00073270 /* Coordinator.swift */,
 				F61B6D47250D72B400073270 /* PropertyAndSignal.swift */,
+				F61B6D3E250D6DD100073270 /* UIKitHelpers.swift */,
+				F61B6D4A250D82ED00073270 /* SwiftUIHelpers.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -343,7 +342,6 @@
 			files = (
 				F64C4E57250D27A800A69FF9 /* User.swift in Sources */,
 				F64C4E42250D246700A69FF9 /* RootCoordinator.swift in Sources */,
-				F64C4E62250D2DF000A69FF9 /* SwiftHelpers.swift in Sources */,
 				F64C4E6F250D369500A69FF9 /* ContainerProtocols.swift in Sources */,
 				F64C4E54250D276E00A69FF9 /* TransactionsService.swift in Sources */,
 				F64C4E3E250D246700A69FF9 /* AppDelegate.swift in Sources */,
@@ -372,12 +370,12 @@
 			files = (
 				F64C4E72250D3C9E00A69FF9 /* User.swift in Sources */,
 				F64C4E73250D3C9E00A69FF9 /* RootCoordinator.swift in Sources */,
-				F64C4E74250D3C9E00A69FF9 /* SwiftHelpers.swift in Sources */,
 				F64C4E75250D3C9E00A69FF9 /* ContainerProtocols.swift in Sources */,
 				F64C4E76250D3C9E00A69FF9 /* TransactionsService.swift in Sources */,
 				F64C4E77250D3C9E00A69FF9 /* AppDelegate.swift in Sources */,
 				F64C4E78250D3C9E00A69FF9 /* Transaction.swift in Sources */,
 				F64C4E79250D3C9E00A69FF9 /* UserService.swift in Sources */,
+				F61B6D4B250D82ED00073270 /* SwiftUIHelpers.swift in Sources */,
 				F61B6D42250D70C000073270 /* LoginViewController.swift in Sources */,
 				F61B6D33250D5FDA00073270 /* Coordinator.swift in Sources */,
 				F64C4E8F250D3F7600A69FF9 /* LoginViewModel.swift in Sources */,

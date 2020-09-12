@@ -8,6 +8,10 @@
 
 import UIKit
 
+func async(after timeInterval: TimeInterval, execute: @escaping () -> Void) {
+    DispatchQueue.main.asyncAfter(deadline: .now() + timeInterval, execute: execute)
+}
+
 extension UIViewController {
     
     func setContentViewController(_ viewController: UIViewController) {
