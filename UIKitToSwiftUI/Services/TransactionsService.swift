@@ -6,8 +6,6 @@
 //  Copyright © 2020 Alexey Naumov. All rights reserved.
 //
 
-import Foundation
-
 class RealTransactionsService: TransactionsService {
     
     private let token: AuthToken

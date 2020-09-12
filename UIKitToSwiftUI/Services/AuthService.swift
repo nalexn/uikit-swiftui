@@ -6,8 +6,6 @@
 //  Copyright © 2020 Alexey Naumov. All rights reserved.
 //
 
-import Foundation
-
 class RealAuthService: AuthService {
     
     func authenticate(login: String, password: String) -> Promise<AuthToken> {
