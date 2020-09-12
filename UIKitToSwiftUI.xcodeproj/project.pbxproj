@@ -20,6 +20,9 @@
 		F64C4E64250D2F9500A69FF9 /* AuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E63250D2F9500A69FF9 /* AuthToken.swift */; };
 		F64C4E66250D2FC400A69FF9 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E65250D2FC400A69FF9 /* UserService.swift */; };
 		F64C4E68250D326C00A69FF9 /* ServiceProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E67250D326C00A69FF9 /* ServiceProtocols.swift */; };
+		F64C4E6B250D358700A69FF9 /* LoginStageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E6A250D358700A69FF9 /* LoginStageContainer.swift */; };
+		F64C4E6D250D362800A69FF9 /* SessionStageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E6C250D362800A69FF9 /* SessionStageContainer.swift */; };
+		F64C4E6F250D369500A69FF9 /* ContainerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E6E250D369500A69FF9 /* ContainerProtocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		F64C4E63250D2F9500A69FF9 /* AuthToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthToken.swift; sourceTree = "<group>"; };
 		F64C4E65250D2FC400A69FF9 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		F64C4E67250D326C00A69FF9 /* ServiceProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProtocols.swift; sourceTree = "<group>"; };
+		F64C4E6A250D358700A69FF9 /* LoginStageContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginStageContainer.swift; sourceTree = "<group>"; };
+		F64C4E6C250D362800A69FF9 /* SessionStageContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStageContainer.swift; sourceTree = "<group>"; };
+		F64C4E6E250D369500A69FF9 /* ContainerProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerProtocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +80,7 @@
 				F64C4E41250D246700A69FF9 /* RootViewController.swift */,
 				F64C4E55250D277600A69FF9 /* DataModels */,
 				F64C4E52250D270C00A69FF9 /* Services */,
+				F64C4E69250D351000A69FF9 /* DIContainers */,
 				F64C4E5E250D285400A69FF9 /* Utils */,
 				F64C4E51250D248900A69FF9 /* Assets */,
 			);
@@ -118,6 +125,16 @@
 				F64C4E5F250D286B00A69FF9 /* Promise.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		F64C4E69250D351000A69FF9 /* DIContainers */ = {
+			isa = PBXGroup;
+			children = (
+				F64C4E6E250D369500A69FF9 /* ContainerProtocols.swift */,
+				F64C4E6A250D358700A69FF9 /* LoginStageContainer.swift */,
+				F64C4E6C250D362800A69FF9 /* SessionStageContainer.swift */,
+			);
+			path = DIContainers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,12 +210,15 @@
 				F64C4E57250D27A800A69FF9 /* User.swift in Sources */,
 				F64C4E42250D246700A69FF9 /* RootViewController.swift in Sources */,
 				F64C4E62250D2DF000A69FF9 /* SwiftHelpers.swift in Sources */,
+				F64C4E6F250D369500A69FF9 /* ContainerProtocols.swift in Sources */,
 				F64C4E54250D276E00A69FF9 /* TransactionsService.swift in Sources */,
 				F64C4E3E250D246700A69FF9 /* AppDelegate.swift in Sources */,
 				F64C4E59250D27C800A69FF9 /* Transaction.swift in Sources */,
 				F64C4E66250D2FC400A69FF9 /* UserService.swift in Sources */,
 				F64C4E5D250D27FB00A69FF9 /* AuthService.swift in Sources */,
+				F64C4E6B250D358700A69FF9 /* LoginStageContainer.swift in Sources */,
 				F64C4E68250D326C00A69FF9 /* ServiceProtocols.swift in Sources */,
+				F64C4E6D250D362800A69FF9 /* SessionStageContainer.swift in Sources */,
 				F64C4E60250D286B00A69FF9 /* Promise.swift in Sources */,
 				F64C4E64250D2F9500A69FF9 /* AuthToken.swift in Sources */,
 			);

@@ -9,15 +9,20 @@
 import Foundation
 
 protocol AuthService {
+    
     func authenticate(login: String, password: String) -> Promise<AuthToken>
 }
 
 protocol UserService {
+    
     init(token: AuthToken)
+    
     func loadUser() -> Promise<User>
 }
 
 protocol TransactionsService {
+    
     init(token: AuthToken)
+    
     func loadTransactions(user: User) -> Promise<[Transaction]>
 }
