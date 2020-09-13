@@ -24,3 +24,16 @@ extension UIViewController {
         viewController.didMove(toParent: self)
     }
 }
+
+extension UIActivityIndicatorView {
+    var animating: Bool {
+        get { isAnimating }
+        set {
+            if newValue {
+                startAnimating()
+            } else {
+                stopAnimating()
+            }
+        }
+    }
+}

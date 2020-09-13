@@ -23,7 +23,8 @@ final class LoginViewCoordinator: BaseCoordinator {
     override func start() {
         guard let parent = parent else { return }
         let viewModel = LoginViewModel(container: container)
-        viewModel.$didLogIn.observe(with: self) { (coordinator, authToken) in
+        viewModel.progress.$status.observe(with: self) { (coordinator, status) in
+            guard case let .loaded(authToken) = status else { return }
             coordinator.startUserSession.send(authToken)
             coordinator.complete()
         }

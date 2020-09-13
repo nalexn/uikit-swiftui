@@ -10,8 +10,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="UIKitApp" customModuleProvider="target">
             <connections>
+                <outlet property="loadingIndicator" destination="7eI-zy-t8a" id="dDQ-47-WAl"/>
                 <outlet property="logInButton" destination="i6N-wg-xAo" id="bZX-0N-26w"/>
                 <outlet property="loginField" destination="Sui-eq-eSX" id="HpX-5R-FA8"/>
+                <outlet property="messageLabel" destination="OV4-ZZ-ncW" id="gSQ-Zb-oIR"/>
                 <outlet property="passwordField" destination="EjQ-3S-fea" id="64p-61-03M"/>
                 <outlet property="view" destination="iN0-l3-epB" id="nZa-xU-cKs"/>
             </connections>
@@ -48,15 +50,30 @@
                         <action selector="handleLogInButtonPressed" destination="-1" eventType="touchUpInside" id="NKE-5d-gfO"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OV4-ZZ-ncW">
+                    <rect key="frame" x="172.5" y="328.5" width="69" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="7eI-zy-t8a">
+                    <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                    <color key="color" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="i6N-wg-xAo" firstAttribute="width" secondItem="EjQ-3S-fea" secondAttribute="width" id="4Km-NA-Iyq"/>
                 <constraint firstItem="EjQ-3S-fea" firstAttribute="width" secondItem="Sui-eq-eSX" secondAttribute="width" id="GR3-qj-XRP"/>
+                <constraint firstItem="Sui-eq-eSX" firstAttribute="top" secondItem="OV4-ZZ-ncW" secondAttribute="bottom" constant="40" id="JbJ-d4-qgz"/>
                 <constraint firstItem="EjQ-3S-fea" firstAttribute="centerX" secondItem="Sui-eq-eSX" secondAttribute="centerX" id="K2l-gl-JCX"/>
                 <constraint firstItem="i6N-wg-xAo" firstAttribute="top" secondItem="EjQ-3S-fea" secondAttribute="bottom" constant="8" id="KVe-mQ-fSP"/>
+                <constraint firstItem="OV4-ZZ-ncW" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="NVc-pO-Yzt"/>
                 <constraint firstItem="EjQ-3S-fea" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="RDi-b7-IQ2"/>
+                <constraint firstItem="OV4-ZZ-ncW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="RTO-Su-CRL"/>
+                <constraint firstItem="7eI-zy-t8a" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Yla-R6-una"/>
                 <constraint firstItem="EjQ-3S-fea" firstAttribute="top" secondItem="Sui-eq-eSX" secondAttribute="bottom" constant="8" id="eOj-WP-LqK"/>
+                <constraint firstItem="7eI-zy-t8a" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="eiV-01-zo3"/>
                 <constraint firstItem="i6N-wg-xAo" firstAttribute="centerX" secondItem="EjQ-3S-fea" secondAttribute="centerX" id="iDY-EK-yqm"/>
                 <constraint firstItem="Sui-eq-eSX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="nDT-GL-2Cu"/>
             </constraints>

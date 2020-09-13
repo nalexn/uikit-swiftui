@@ -12,7 +12,7 @@ class RealAuthService: AuthService {
         
         return Promise<AuthToken> { forward in
             // Simulating actual network request
-            async(after: 1.5) {
+            async(after: 2.5) {
                 forward(.success(AuthToken(value: "token_123456789")))
             }
         }
