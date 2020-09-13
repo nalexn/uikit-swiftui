@@ -12,34 +12,30 @@ final class Promise<Value> {
     
     typealias Completion = (Result<Value, Error>) -> Void
     private let task: (@escaping Completion) -> Void
-    private let cancelToken: CancelToken
+    private let parent: Any?
     
     convenience init(task: @escaping (@escaping Completion) -> Void) {
-        self.init(cancelToken: CancelToken(), task: task)
+        self.init(parent: nil, task: task)
     }
     
-    init(cancelToken: CancelToken, task: @escaping (@escaping Completion) -> Void) {
+    private init(parent: Any?, task: @escaping (@escaping Completion) -> Void) {
         self.task = task
-        self.cancelToken = cancelToken
+        self.parent = parent
     }
     
-    @discardableResult
-    func complete(_ result: @escaping Completion) -> CancelToken {
-        task(result)
-        return cancelToken
+    func complete(_ completion: @escaping Completion) -> CancelToken {
+        task({ [weak self] result in
+            if self != nil {
+                completion(result)
+            }
+        })
+        return CancelToken(parent: self)
     }
     
     func then<T>(_ promise: @escaping (Value) -> Promise<T>) -> Promise<T> {
-        return Promise<T>(cancelToken: cancelToken) { forwardResult in
-            guard !self.cancelToken.isCancelled else {
-                forwardResult(.failure(NSError.userCancelled))
-                return
-            }
-            self.task({ currentResult in
-                guard !self.cancelToken.isCancelled else {
-                    forwardResult(.failure(NSError.userCancelled))
-                    return
-                }
+        return Promise<T>(parent: self) { [weak self] forwardResult in
+            self?.task({ currentResult in
+                guard self != nil else { return }
                 switch currentResult {
                 case .success(let currentValue):
                     promise(currentValue).task({ nextResult in
@@ -75,17 +71,14 @@ extension Promise where Value == Void {
 class CancelToken {
     
     private(set) var isCancelled: Bool = false
+    private var parent: Any?
+    
+    fileprivate init(parent: Any) {
+        self.parent = parent
+    }
     
     func cancel() {
         isCancelled = true
-    }
-}
-
-extension NSError {
-    static var userCancelled: NSError {
-        return NSError(
-            domain: NSCocoaErrorDomain, code: NSUserCancelledError,
-            userInfo: [NSLocalizedDescriptionKey:
-                NSLocalizedString("Canceled by user", comment: "")])
+        parent = nil
     }
 }

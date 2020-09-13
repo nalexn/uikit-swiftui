@@ -105,6 +105,15 @@ extension Loadable: Equatable where Value: Equatable {
     }
 }
 
+extension NSError {
+    static var userCancelled: NSError {
+        return NSError(
+            domain: NSCocoaErrorDomain, code: NSUserCancelledError,
+            userInfo: [NSLocalizedDescriptionKey:
+                NSLocalizedString("Canceled by user", comment: "")])
+    }
+}
+
 extension Promise {
     func assign<Root>(to keyPath: WritableKeyPath<Root, Loadable<Value>>, on object: Root) -> CancelToken where Root: AnyObject {
         return complete { [weak object] result in

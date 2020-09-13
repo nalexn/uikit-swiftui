@@ -108,4 +108,28 @@ public class SubscriptionPoint<Value> {
             last = value
         }
     }
+    
+    /**
+     Provides a new SubscriptionPoint producing
+     a tuple of the last values from both sources
+     - Parameter other: Second source of values
+    */
+    public func combine<T>(with other: SubscriptionPoint<T>) -> SubscriptionPoint<(Value, T)> {
+        let combination = SubscriptionPoint<(Value, T)>(notifyUponSubscription: true)
+        var last1: Value?
+        var last2: T?
+        self.observe(with: self) { (_, value) in
+            last1 = value
+            if let v1 = last1, let v2 = last2 {
+                combination.broadcast((v1, v2))
+            }
+        }
+        other.observe(with: other) { (_, value) in
+            last2 = value
+            if let v1 = last1, let v2 = last2 {
+                combination.broadcast((v1, v2))
+            }
+        }
+        return combination
+    }
 }
