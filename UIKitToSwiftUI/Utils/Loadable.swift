@@ -104,3 +104,16 @@ extension Loadable: Equatable where Value: Equatable {
         }
     }
 }
+
+extension Promise {
+    func assign<Root>(to keyPath: WritableKeyPath<Root, Loadable<Value>>, on object: Root) -> CancelToken where Root: AnyObject {
+        return complete { [weak object] result in
+            switch result {
+            case .success(let data):
+                object?[keyPath: keyPath] = .loaded(data)
+            case .failure(let error):
+                object?[keyPath: keyPath] = .failed(error)
+            }
+        }
+    }
+}

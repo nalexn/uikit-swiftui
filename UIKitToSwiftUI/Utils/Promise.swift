@@ -56,6 +56,20 @@ final class Promise<Value> {
             })
         }
     }
+    
+    func map<T>(_ transform: @escaping (Value) -> T) -> Promise<T> {
+        return then { value -> Promise<T> in
+            return Promise<T> { forwardResult in
+                forwardResult(.success(transform(value)))
+            }
+        }
+    }
+}
+
+extension Promise where Value == Void {
+    static func startWith<T>(_ promise: @escaping (()) -> Promise<T>) -> Promise<T> {
+        return Promise<Void>(task: { $0(.success(())) }).then(promise)
+    }
 }
 
 class CancelToken {

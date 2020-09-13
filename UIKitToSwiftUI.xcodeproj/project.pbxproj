@@ -21,6 +21,8 @@
 		F61B6D48250D72B400073270 /* PropertyAndSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B6D47250D72B400073270 /* PropertyAndSignal.swift */; };
 		F61B6D49250D72B400073270 /* PropertyAndSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B6D47250D72B400073270 /* PropertyAndSignal.swift */; };
 		F61B6D4B250D82ED00073270 /* SwiftUIHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B6D4A250D82ED00073270 /* SwiftUIHelpers.swift */; };
+		F61B6D4D250D916300073270 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B6D4C250D916300073270 /* HomeViewModel.swift */; };
+		F61B6D4E250D916300073270 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B6D4C250D916300073270 /* HomeViewModel.swift */; };
 		F64C4E3E250D246700A69FF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E3D250D246700A69FF9 /* AppDelegate.swift */; };
 		F64C4E42250D246700A69FF9 /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E41250D246700A69FF9 /* RootCoordinator.swift */; };
 		F64C4E47250D246C00A69FF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F64C4E46250D246C00A69FF9 /* Assets.xcassets */; };
@@ -67,6 +69,7 @@
 		F61B6D41250D70C000073270 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F61B6D47250D72B400073270 /* PropertyAndSignal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyAndSignal.swift; sourceTree = "<group>"; };
 		F61B6D4A250D82ED00073270 /* SwiftUIHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIHelpers.swift; sourceTree = "<group>"; };
+		F61B6D4C250D916300073270 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		F64C4E3A250D246700A69FF9 /* UIKitApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F64C4E3D250D246700A69FF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F64C4E41250D246700A69FF9 /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
@@ -111,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				F61B6D35250D65D800073270 /* HomeViewCoordinator.swift */,
+				F61B6D4C250D916300073270 /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -230,8 +234,8 @@
 		F64C4E8C250D3F4F00A69FF9 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				F64C4E8D250D3F7600A69FF9 /* LoginViewModel.swift */,
 				F61B6D2E250D5D7700073270 /* LoginViewCoordinator.swift */,
+				F64C4E8D250D3F7600A69FF9 /* LoginViewModel.swift */,
 				F61B6D38250D69DB00073270 /* UIKit */,
 				F61B6D40250D70A400073270 /* SwiftUI */,
 			);
@@ -341,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F64C4E57250D27A800A69FF9 /* User.swift in Sources */,
+				F61B6D4D250D916300073270 /* HomeViewModel.swift in Sources */,
 				F64C4E42250D246700A69FF9 /* RootCoordinator.swift in Sources */,
 				F64C4E6F250D369500A69FF9 /* ContainerProtocols.swift in Sources */,
 				F64C4E54250D276E00A69FF9 /* TransactionsService.swift in Sources */,
@@ -373,6 +378,7 @@
 				F64C4E75250D3C9E00A69FF9 /* ContainerProtocols.swift in Sources */,
 				F64C4E76250D3C9E00A69FF9 /* TransactionsService.swift in Sources */,
 				F64C4E77250D3C9E00A69FF9 /* AppDelegate.swift in Sources */,
+				F61B6D4E250D916300073270 /* HomeViewModel.swift in Sources */,
 				F64C4E78250D3C9E00A69FF9 /* Transaction.swift in Sources */,
 				F64C4E79250D3C9E00A69FF9 /* UserService.swift in Sources */,
 				F61B6D4B250D82ED00073270 /* SwiftUIHelpers.swift in Sources */,
