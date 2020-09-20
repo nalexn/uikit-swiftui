@@ -24,7 +24,7 @@ final class RootCoordinator: BaseCoordinator {
     private func coordinateToLogIn() {
         let container = RealLoginStageContainer()
         let loginCoordinator = LoginViewCoordinator(container: container, parent: rootVC)
-        loginCoordinator.startUserSession.print()
+        loginCoordinator.startUserSession
             .first()
             .sink { [weak self] authToken in
                 self?.coordinateToHome(authToken: authToken)

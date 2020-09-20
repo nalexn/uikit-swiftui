@@ -32,13 +32,29 @@ struct LoginView: View {
     
     var body: some View {
         VStack {
-            TextField("Login", text: $viewModel.textIO.login)
-                .modifier(TextFieldAppearance())
-            TextField("Password", text: $viewModel.textIO.password)
-                .modifier(TextFieldAppearance())
-            Button(action: { self.viewModel.authenticate() },
-                   label: { Text("Log In").foregroundColor(Color(.systemBackground)) })
-                .modifier(LoginButtonAppearance(isEnabled: $viewModel.loginButton.isEnabled))
+            Text(viewModel.textIO.message)
+                .font(.footnote)
+                .multilineTextAlignment(.center)
+                .padding(10)
+            if viewModel.progress.status.isLoading {
+                ProgressView()
+                    .padding(10)
+                Button(action: { self.viewModel.cancelLoading() },
+                       label: { Text("Cancel") })
+            } else {
+                TextField("Login", text: $viewModel.textIO.login)
+                    .modifier(TextFieldAppearance())
+                TextField("Password", text: $viewModel.textIO.password)
+                    .modifier(TextFieldAppearance())
+                Button(action: { self.viewModel.authenticate() },
+                       label: { Text("Log In").foregroundColor(Color(.systemBackground)) })
+                    .frame(maxWidth: .infinity)
+                    .padding(EdgeInsets(top: 2, leading: 4, bottom: 2, trailing: 4))
+                    .background(
+                        RoundedRectangle(cornerRadius: 4)
+                            .fill(Color(viewModel.loginButton.isEnabled ? .systemBlue : .systemGray)))
+                    .disabled(!viewModel.loginButton.isEnabled)
+            }
         }
         .frame(width: 200)
     }
@@ -53,20 +69,6 @@ extension LoginView {
                 .background(
                     RoundedRectangle(cornerRadius: 4)
                         .stroke(Color(.separator), lineWidth: 1))
-        }
-    }
-    struct LoginButtonAppearance: ViewModifier {
-        
-        @Binding var isEnabled: Bool
-        
-        func body(content: Content) -> some View {
-            content
-                .frame(maxWidth: .infinity)
-                .padding(EdgeInsets(top: 2, leading: 4, bottom: 2, trailing: 4))
-                .background(
-                    RoundedRectangle(cornerRadius: 4)
-                        .fill(Color(isEnabled ? .systemBlue : .systemGray)))
-                .disabled(!isEnabled)
         }
     }
 }
