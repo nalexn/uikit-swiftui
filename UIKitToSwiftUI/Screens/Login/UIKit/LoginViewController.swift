@@ -34,6 +34,8 @@ class LoginViewController: UIViewController {
             .forEach {
                 $0.addTarget(self, action: #selector(handleUpdatedText(_:)), for: .editingChanged)
             }
+        loginField.placeholder = viewModel.textIO.loginTitle
+        passwordField.placeholder = viewModel.textIO.passwordTitle
         
         cancelBag.collect {
             viewModel.$textIO.map(\.message)

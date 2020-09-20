@@ -237,8 +237,8 @@
 			children = (
 				F61B6D2E250D5D7700073270 /* LoginViewCoordinator.swift */,
 				F64C4E8D250D3F7600A69FF9 /* LoginViewModel.swift */,
-				F61B6D38250D69DB00073270 /* UIKit */,
 				F61B6D40250D70A400073270 /* SwiftUI */,
+				F61B6D38250D69DB00073270 /* UIKit */,
 			);
 			path = Login;
 			sourceTree = "<group>";

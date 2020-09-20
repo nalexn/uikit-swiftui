@@ -40,14 +40,15 @@ struct LoginView: View {
                 ProgressView()
                     .padding(10)
                 Button(action: { self.viewModel.cancelLoading() },
-                       label: { Text("Cancel") })
+                       label: { Text(viewModel.loginButton.title) })
             } else {
-                TextField("Login", text: $viewModel.textIO.login)
+                TextField(viewModel.textIO.loginTitle, text: $viewModel.textIO.login)
                     .modifier(TextFieldAppearance())
-                TextField("Password", text: $viewModel.textIO.password)
+                TextField(viewModel.textIO.passwordTitle, text: $viewModel.textIO.password)
                     .modifier(TextFieldAppearance())
                 Button(action: { self.viewModel.authenticate() },
-                       label: { Text("Log In").foregroundColor(Color(.systemBackground)) })
+                       label: { Text(viewModel.loginButton.title)
+                        .foregroundColor(Color(.systemBackground)) })
                     .frame(maxWidth: .infinity)
                     .padding(EdgeInsets(top: 2, leading: 4, bottom: 2, trailing: 4))
                     .background(

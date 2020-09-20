@@ -20,15 +20,14 @@ final class LoginViewModel: ObservableObject {
     init(container: LoginStageContainer) {
         self.authService = container.authService
         
-        let statusUpdates = $progress
-            .map(\.status)
-            .removeDuplicates()
-        let isLoading = statusUpdates.map { $0.isLoading }
         cancelBag.collect {
-            statusUpdates
+            $progress.map(\.status)
                 .map { $0.statusMessage }
                 .assign(to: \.textIO.message, on: self)
-            Publishers.CombineLatest3($textIO.map(\.login), $textIO.map(\.password), isLoading)
+            Publishers.CombineLatest3(
+                $textIO.map(\.login),
+                $textIO.map(\.password),
+                $progress.map { $0.status.isLoading })
                 .map { (login, password, isLoading) -> LoginViewModel.LoginButton.Status in
                     if isLoading {
                         return .loading
@@ -36,6 +35,7 @@ final class LoginViewModel: ObservableObject {
                     return login.count > 0 && password.count > 0 ?
                         .enabledLogin : .disabledLogin
                 }
+                .removeDuplicates()
                 .assign(to: \.loginButton.status, on: self)
         }
     }
@@ -45,6 +45,8 @@ final class LoginViewModel: ObservableObject {
 
 extension LoginViewModel {
     struct TextIO {
+        let loginTitle: String = "Login"
+        let passwordTitle: String = "Password"
         var login: String = ""
         var password: String = ""
         var message: String = ""
@@ -60,7 +62,7 @@ extension LoginViewModel {
         var status: Status = .disabledLogin {
             didSet {
                 isEnabled = status != .disabledLogin
-                title = status == .loading ? "Cancel" : "Log In"
+                title = status == .loading ? "Cancel" : "Sign In"
             }
         }
     }
