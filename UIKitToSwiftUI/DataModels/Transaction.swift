@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Transaction {
+struct Transaction: Hashable, Codable {
     let date: Date
     let amount: Int
     let description: String

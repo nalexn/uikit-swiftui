@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import Combine
 
 final class LoginViewCoordinator: BaseCoordinator {
     
     private let container: LoginStageContainer
     private weak var parent: UIViewController?
-    
-    @Signal private(set) var startUserSession: Accepts<AuthToken>
+    private var cancelBag = CancelBag()
+    let startUserSession = PassthroughSubject<AuthToken, Never>()
     
     init(container: LoginStageContainer, parent: UIViewController) {
         self.container = container
@@ -23,13 +24,22 @@ final class LoginViewCoordinator: BaseCoordinator {
     override func start() {
         guard let parent = parent else { return }
         let viewModel = LoginViewModel(container: container)
-        viewModel.progress.$status.observe(with: self) { (coordinator, status) in
-            guard case let .loaded(authToken) = status else { return }
-            coordinator.startUserSession.send(authToken)
-            coordinator.complete()
+        cancelBag.collect {
+            viewModel.$progress
+                .map(\.status)
+                .compactMap { $0.value }
+                .subscribe(startUserSession)
+            startUserSession.first()
+                .map { _ in () }
+                .assign(to: \.onCompleteTrigger, on: self)
         }
+        
         let viewController = LoginViewController(viewModel: viewModel)
         parent.setContentViewController(viewController)
+    }
+    
+    private var onCompleteTrigger: Void {
+        didSet { complete() }
     }
     
     override func complete() {

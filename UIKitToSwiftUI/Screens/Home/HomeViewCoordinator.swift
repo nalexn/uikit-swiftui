@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import Combine
 
 final class HomeViewCoordinator: BaseCoordinator {
     
     private let container: SessionStageContainer
     private weak var parent: UIViewController?
     
-    @Signal private(set) var endUserSession: Accepts<Void>
+    let endUserSession = PassthroughSubject<AuthToken, Never>()
     
     init(container: SessionStageContainer, parent: UIViewController) {
         self.container = container

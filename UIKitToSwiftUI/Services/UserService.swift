@@ -6,7 +6,11 @@
 //  Copyright © 2020 Alexey Naumov. All rights reserved.
 //
 
-class RealUserService: UserService {
+import Combine
+
+typealias RealUserService = FakeUserService
+
+class FakeUserService: UserService {
     
     private let token: AuthToken
     
@@ -15,12 +19,11 @@ class RealUserService: UserService {
     }
     
     func loadUser() -> Promise<User> {
-        
-        return Promise<User> { forward in
+        return Future<User, Error> { promise in
             // Simulating actual network request
-            async(after: 1.5) {
-                forward(.success(User(name: "John Smith", balance: 242352)))
+            async(after: 2.5) {
+                promise(.success(User(name: "John Smith", balance: 242352)))
             }
-        }
+        }.eraseToAnyPublisher()
     }
 }

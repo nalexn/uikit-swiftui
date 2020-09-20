@@ -6,15 +6,18 @@
 //  Copyright © 2020 Alexey Naumov. All rights reserved.
 //
 
-class RealAuthService: AuthService {
+import Combine
+
+typealias RealAuthService = FakeAuthService
+
+class FakeAuthService: AuthService {
     
     func authenticate(login: String, password: String) -> Promise<AuthToken> {
-        
-        return Promise<AuthToken> { forward in
+        return Future<AuthToken, Error> { promise in
             // Simulating actual network request
             async(after: 2.5) {
-                forward(.success(AuthToken(value: "token_123456789")))
+                promise(.success(AuthToken(value: "token_123456789")))
             }
-        }
+        }.eraseToAnyPublisher()
     }
 }

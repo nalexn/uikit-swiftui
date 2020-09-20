@@ -11,6 +11,7 @@ import UIKit
 class LoginViewController: UIViewController {
     
     private let viewModel: LoginViewModel
+    private var cancelBag = CancelBag()
     
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var loginField: UITextField!
@@ -33,37 +34,41 @@ class LoginViewController: UIViewController {
             .forEach {
                 $0.addTarget(self, action: #selector(handleUpdatedText(_:)), for: .editingChanged)
             }
-        viewModel.textIO.$message.observe(with: self) { (vc, message) in
-            vc.messageLabel.text = message
-        }
-        viewModel.progress.$isLoading.observe(with: self) { (vc, isLoading) in
-            vc.loadingIndicator.animating = isLoading
-            [vc.loginField, vc.passwordField]
-                .forEach { $0?.isHidden = isLoading }
-        }
-        viewModel.loginButton.$title.observe(with: self) { (vc, title) in
-            vc.logInButton.setTitle(title, for: .normal)
-        }
-        viewModel.loginButton.$isEnabled.observe(with: self) { (vc, isEnabled) in
-            vc.logInButton.isEnabled = isEnabled
-        }
-        viewModel.loginButton.$status.observe(with: self) { (vc, status) in
-            let fgColor: UIColor, bgColor: UIColor
-            switch status {
-            case .disabledLogin:
-                fgColor = .white
-                bgColor = .systemGray
-            case .enabledLogin:
-                fgColor = .white
-                bgColor = .systemBlue
-            case .loading:
-                fgColor = .darkText
-                bgColor = .clear
-//                fgColor = .white
-//                bgColor = .systemBlue
-            }
-            vc.logInButton.setTitleColor(fgColor, for: .normal)
-            vc.logInButton.backgroundColor = bgColor
+        
+        cancelBag.collect {
+            viewModel.$textIO.map(\.message)
+                .sink { [weak self] message in
+                    self?.messageLabel.text = message
+                }
+            viewModel.$progress.map { $0.status.isLoading }
+                .sink { [weak self] isLoading in
+                    self?.loadingIndicator.animating = isLoading
+                    [self?.loginField, self?.passwordField]
+                        .forEach { $0?.isHidden = isLoading }
+                }
+            viewModel.$loginButton.map(\.title)
+                .sink { [weak self] title in
+                    self?.logInButton.setTitle(title, for: .normal)
+                }
+            viewModel.$loginButton.map(\.isEnabled)
+                .sink { [weak self] isEnabled in
+                    self?.logInButton.isEnabled = isEnabled
+                }
+            viewModel.$loginButton.map(\.status)
+                .map { status -> (UIColor, UIColor) in
+                    switch status {
+                    case .disabledLogin:
+                        return (.white, .systemGray)
+                    case .enabledLogin:
+                        return (.white, .systemBlue)
+                    case .loading:
+                        return (.darkText, .clear)
+                    }
+                }
+                .sink { [weak self] (fgColor, bgColor) in
+                    self?.logInButton.setTitleColor(fgColor, for: .normal)
+                    self?.logInButton.backgroundColor = bgColor
+                }
         }
     }
     

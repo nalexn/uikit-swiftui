@@ -16,7 +16,7 @@ class LoginViewController: UIHostingController<LoginView> {
     
     init(viewModel: LoginViewModel) {
         self.viewModel = viewModel
-        super.init(rootView: LoginView(viewModel: viewModel.adapt()))
+        super.init(rootView: LoginView(viewModel: viewModel))
     }
     
     @objc required dynamic init?(coder aDecoder: NSCoder) {
@@ -24,48 +24,21 @@ class LoginViewController: UIHostingController<LoginView> {
     }
 }
 
-extension LoginViewModel {
-    func adapt() -> LoginView.ViewModel {
-        let vm = LoginView.ViewModel()
-        vm.cancelBag.collect {
-            vm.$login.assign(to: \.login, on: self)
-            vm.$password.assign(to: \.password, on: self)
-            $isLoginButtonEnabled.assign(to: \.isLoginButtonEnabled, on: vm)
-        }
-        return vm
-    }
-}
-
-// MARK: - ObservableObject
-
-extension LoginView {
-    class ViewModel: ObservableObject {
-        
-        @Published var login: String = ""
-        @Published var password: String = ""
-        @Published var isLoginButtonEnabled = false
-        var cancelBag = CancelBag()
-        
-        let onLoginButtonPressed = PassthroughSubject<Void, Never>()
-    }
-}
-
 // MARK: - View
 
 struct LoginView: View {
     
-    @ObservedObject var viewModel: ViewModel
+    @ObservedObject var viewModel: LoginViewModel
     
     var body: some View {
         VStack {
-            TextField("Login", text: $viewModel.login)
+            TextField("Login", text: $viewModel.textIO.login)
                 .modifier(TextFieldAppearance())
-            TextField("Password", text: $viewModel.password)
+            TextField("Password", text: $viewModel.textIO.password)
                 .modifier(TextFieldAppearance())
-            Button(action: { self.viewModel.onLoginButtonPressed.send(()) },
+            Button(action: { self.viewModel.authenticate() },
                    label: { Text("Log In").foregroundColor(Color(.systemBackground)) })
-                .modifier(LoginButtonAppearance(isEnabled: $viewModel.isLoginButtonEnabled))
-                .disabled(!viewModel.isLoginButtonEnabled)
+                .modifier(LoginButtonAppearance(isEnabled: $viewModel.loginButton.isEnabled))
         }
         .frame(width: 200)
     }
@@ -93,6 +66,7 @@ extension LoginView {
                 .background(
                     RoundedRectangle(cornerRadius: 4)
                         .fill(Color(isEnabled ? .systemBlue : .systemGray)))
+                .disabled(!isEnabled)
         }
     }
 }
@@ -101,6 +75,6 @@ extension LoginView {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(viewModel: LoginView.ViewModel())
+        LoginView(viewModel: .init(container: FakeLoginStageContainer()))
     }
 }

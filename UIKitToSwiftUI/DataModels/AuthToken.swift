@@ -6,6 +6,6 @@
 //  Copyright © 2020 Alexey Naumov. All rights reserved.
 //
 
-struct AuthToken {
+struct AuthToken: Hashable, Codable {
     let value: String
 }

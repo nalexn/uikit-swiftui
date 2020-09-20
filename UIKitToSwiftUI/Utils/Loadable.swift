@@ -6,9 +6,12 @@
 //  Copyright © 2020 Alexey Naumov. All rights reserved.
 //
 
+import Combine
 import Foundation
 
 enum Loadable<Value> {
+    
+    typealias CancelToken = AnyCancellable
 
     case notRequested
     case isLoading(last: Value?, cancelToken: CancelToken)
@@ -20,6 +23,12 @@ enum Loadable<Value> {
         case let .loaded(value): return value
         case let .isLoading(last, _): return last
         default: return nil
+        }
+    }
+    var isLoading: Bool {
+        switch self {
+        case .isLoading: return true
+        default: return false
         }
     }
     var error: Error? {
@@ -111,18 +120,5 @@ extension NSError {
             domain: NSCocoaErrorDomain, code: NSUserCancelledError,
             userInfo: [NSLocalizedDescriptionKey:
                 NSLocalizedString("Canceled by user", comment: "")])
-    }
-}
-
-extension Promise {
-    func assign<Root>(to keyPath: WritableKeyPath<Root, Loadable<Value>>, on object: Root) -> CancelToken where Root: AnyObject {
-        return complete { [weak object] result in
-            switch result {
-            case .success(let data):
-                object?[keyPath: keyPath] = .loaded(data)
-            case .failure(let error):
-                object?[keyPath: keyPath] = .failed(error)
-            }
-        }
     }
 }

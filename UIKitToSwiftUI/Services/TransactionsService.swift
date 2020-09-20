@@ -6,7 +6,11 @@
 //  Copyright © 2020 Alexey Naumov. All rights reserved.
 //
 
-class RealTransactionsService: TransactionsService {
+import Combine
+
+typealias RealTransactionsService = FakeTransactionsService
+
+class FakeTransactionsService: TransactionsService {
     
     private let token: AuthToken
     
@@ -16,15 +20,15 @@ class RealTransactionsService: TransactionsService {
     
     func loadTransactions(user: User) -> Promise<[Transaction]> {
         
-        return Promise<[Transaction]> { forward in
+        return Future<[Transaction], Error> { promise in
             // Simulating actual network request
             async(after: 1.5) {
-                forward(.success([
+                promise(.success([
                     Transaction(date: .init(timeIntervalSinceNow: -3000), amount: 53232, description: "Payrol from X inc."),
                     Transaction(date: .init(timeIntervalSinceNow: -2000), amount: -3261, description: "M & Coffee shop"),
                     Transaction(date: .init(timeIntervalSinceNow: -100), amount: -412, description: "Super B Taxi"),
                     ]))
             }
-        }
+        }.eraseToAnyPublisher()
     }
 }

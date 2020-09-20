@@ -6,7 +6,7 @@
 //  Copyright © 2020 Alexey Naumov. All rights reserved.
 //
 
-struct User: Codable {
+struct User: Hashable, Codable {
     let name: String
     let balance: Int
 }

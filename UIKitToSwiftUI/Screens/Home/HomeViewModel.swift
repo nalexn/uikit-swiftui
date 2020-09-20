@@ -6,12 +6,14 @@
 //  Copyright © 2020 Alexey Naumov. All rights reserved.
 //
 
+import Combine
+
 final class HomeViewModel {
     
     private let userService: UserService
     private let transactionsService: TransactionsService
     
-    @Property private(set) var content: Loadable<(User, [Transaction])> = .notRequested
+    @Published var content: Loadable<(user: User, transactions: [Transaction])> = .notRequested
     
     init(container: SessionStageContainer) {
         self.userService = container.userService
@@ -23,19 +25,21 @@ final class HomeViewModel {
 
 extension HomeViewModel {
     
-    func loadContent() -> CancelToken {
+    func loadContent() {
         let userService = self.userService
         let transactionsService = self.transactionsService
-        let token = Promise
-            .startWith {
+        let token = Just<Void>
+            .withErrorType(Error.self)
+            .flatMap {
                 userService.loadUser()
             }
-            .then { user in
+            .flatMap { user in
                 transactionsService.loadTransactions(user: user)
                     .map { (user, $0) }
             }
-            .assign(to: \.content, on: self)
+            .sinkToLoadable { [weak self] content in
+                self?.content = content
+            }
         content.setIsLoading(cancelToken: token)
-        return token
     }
 }
