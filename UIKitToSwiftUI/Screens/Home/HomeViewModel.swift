@@ -81,7 +81,8 @@ extension HomeViewModel {
         var balance: String = ""
     }
     
-    struct TransactionInfo {
+    struct TransactionInfo: Identifiable {
+        var id: String
         var date: String
         var amount: String
         var description: String
@@ -123,7 +124,8 @@ private extension Array where Element == Transaction {
         let currencyFormatter = NumberFormatter.currency
         let dateFormatter = DateFormatter.transaction
         return self.map {
-            .init(date: dateFormatter.string(from: $0.date),
+            .init(id: $0.id,
+                  date: dateFormatter.string(from: $0.date),
                   amount: currencyFormatter.amount(cents: $0.amount),
                   description: $0.description)
             }

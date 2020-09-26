@@ -24,9 +24,9 @@ class FakeTransactionsService: TransactionsService {
             // Simulating actual network request
             async(after: 0.5) {
                 promise(.success([
-                    Transaction(date: .init(timeIntervalSinceNow: -3000), amount: 53232, description: "Payrol from X inc."),
-                    Transaction(date: .init(timeIntervalSinceNow: -2000), amount: -3261, description: "M & Coffee shop"),
-                    Transaction(date: .init(timeIntervalSinceNow: -100), amount: -412, description: "Super B Taxi"),
+                    Transaction(id: "a3t", date: .init(timeIntervalSinceNow: -3000), amount: 53232, description: "Payrol from X inc."),
+                    Transaction(id: "y67", date: .init(timeIntervalSinceNow: -2000), amount: -3261, description: "M & Coffee shop"),
+                    Transaction(id: "07r", date: .init(timeIntervalSinceNow: -100), amount: -412, description: "Super B Taxi"),
                     ]))
             }
         }.eraseToAnyPublisher()

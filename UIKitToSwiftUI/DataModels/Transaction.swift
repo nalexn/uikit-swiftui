@@ -9,6 +9,7 @@
 import Foundation
 
 struct Transaction: Hashable, Codable {
+    let id: String
     let date: Date
     let amount: Int
     let description: String

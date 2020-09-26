@@ -60,6 +60,7 @@
 		F64C4E92250D431300A69FF9 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E90250D431300A69FF9 /* Loadable.swift */; };
 		F672E7A1251F4F8B00F87A2C /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F672E7A0251F4F8B00F87A2C /* Formatters.swift */; };
 		F672E7A2251F4F8B00F87A2C /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F672E7A0251F4F8B00F87A2C /* Formatters.swift */; };
+		F672E7A7251F566900F87A2C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F672E7A6251F566900F87A2C /* HomeViewController.swift */; };
 		F6D30F5525128CBA009ABC4E /* CancelBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D30F5425128CBA009ABC4E /* CancelBag.swift */; };
 		F6D30F5625128CBA009ABC4E /* CancelBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D30F5425128CBA009ABC4E /* CancelBag.swift */; };
 /* End PBXBuildFile section */
@@ -97,6 +98,7 @@
 		F64C4E8D250D3F7600A69FF9 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		F64C4E90250D431300A69FF9 /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
 		F672E7A0251F4F8B00F87A2C /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
+		F672E7A6251F566900F87A2C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F6D30F5425128CBA009ABC4E /* CancelBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelBag.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,6 +126,7 @@
 				F61B6D35250D65D800073270 /* HomeViewCoordinator.swift */,
 				F61B6D4C250D916300073270 /* HomeViewModel.swift */,
 				F61E1D472517E5F900DD70AA /* UIKit */,
+				F672E7A5251F563E00F87A2C /* SwiftUI */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -261,6 +264,14 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		F672E7A5251F563E00F87A2C /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				F672E7A6251F566900F87A2C /* HomeViewController.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -396,6 +407,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F672E7A7251F566900F87A2C /* HomeViewController.swift in Sources */,
 				F61E1D40251780D200DD70AA /* ContainersForPreview.swift in Sources */,
 				F61E1D332517677E00DD70AA /* CombineHelpers.swift in Sources */,
 				F6D30F5625128CBA009ABC4E /* CancelBag.swift in Sources */,
