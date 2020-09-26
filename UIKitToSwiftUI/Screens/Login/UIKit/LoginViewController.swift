@@ -67,7 +67,7 @@ class LoginViewController: UIViewController {
                     case .enabledLogin:
                         return (.white, .systemBlue)
                     case .loading:
-                        return (.darkText, .clear)
+                        return (.systemBlue, .clear)
                     }
                 }
                 .sink { [weak self] (fgColor, bgColor) in
