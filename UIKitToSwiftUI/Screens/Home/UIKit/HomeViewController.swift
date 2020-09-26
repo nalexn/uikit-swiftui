@@ -17,6 +17,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var balanceLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var logoutButton: UIButton!
     
     private var transactions: [HomeViewModel.TransactionInfo] = []
     
@@ -55,10 +56,18 @@ class HomeViewController: UIViewController {
             viewModel.$progress.map { $0.status.isLoading }
                 .sink { [weak self] isLoading in
                     self?.loadingIndicator.animating = isLoading
-                    [self?.nameLabel, self?.balanceLabel, self?.tableView]
+                    [self?.nameLabel, self?.balanceLabel, self?.tableView, self?.logoutButton]
                         .forEach { $0?.isHidden = isLoading }
                 }
+            viewModel.$textIO.map(\.logoutTitle)
+                .sink { [weak self] title in
+                    self?.logoutButton.setTitle(title, for: .normal)
+                }
         }
+    }
+    
+    @IBAction func handleLogOutButtonPressed() {
+        viewModel.logOut()
     }
 }
 

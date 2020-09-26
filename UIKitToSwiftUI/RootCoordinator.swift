@@ -18,6 +18,9 @@ final class RootCoordinator: BaseCoordinator {
         window.rootViewController = rootVC
         window.makeKeyAndVisible()
         
+        // Alternatively, you can launch right from the home screen:
+        // coordinateToHome(authToken: AuthToken(value: ""))
+        
         coordinateToLogIn()
     }
     

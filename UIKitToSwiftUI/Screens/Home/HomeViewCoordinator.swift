@@ -26,6 +26,8 @@ final class HomeViewCoordinator: BaseCoordinator {
         let viewModel = HomeViewModel(container: container)
         
         cancelBag.collect {
+            viewModel.onLogOut
+                .subscribe(endUserSession)
             endUserSession
                 .assign(to: \.onComplete, on: self)
         }

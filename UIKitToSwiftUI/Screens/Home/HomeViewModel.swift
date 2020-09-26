@@ -15,6 +15,9 @@ final class HomeViewModel: ObservableObject {
     private let transactionsService: TransactionsService
     private var cancelBag = CancelBag()
     
+    let onLogOut = PassthroughSubject<Void, Never>()
+    
+    @Published var textIO = TextIO()
     @Published var userInfo = UserInfo()
     @Published var transactions: [TransactionInfo] = []
     @Published var progress = Progress()
@@ -60,11 +63,19 @@ extension HomeViewModel {
             }
         content.data.setIsLoading(cancelToken: token)
     }
+    
+    func logOut() {
+        onLogOut.send(())
+    }
 }
 
 // MARK: - Elements
 
 extension HomeViewModel {
+    struct TextIO {
+        let logoutTitle: String = "Log out"
+    }
+    
     struct UserInfo {
         var name: String = ""
         var balance: String = ""

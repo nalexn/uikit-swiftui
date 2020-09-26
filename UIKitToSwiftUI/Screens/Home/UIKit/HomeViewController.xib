@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="balanceLabel" destination="6kt-HV-1V8" id="kXy-v3-PWr"/>
                 <outlet property="loadingIndicator" destination="a0c-CP-gD3" id="IOF-QA-TEu"/>
+                <outlet property="logoutButton" destination="YLb-tC-h0z" id="eV4-he-PrS"/>
                 <outlet property="nameLabel" destination="PsG-Cu-ZZk" id="3od-dy-dPq"/>
                 <outlet property="tableView" destination="3DF-Dd-Jo3" id="6vB-zO-Vs5"/>
                 <outlet property="view" destination="iN0-l3-epB" id="tkY-a3-glK"/>
@@ -46,8 +47,16 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLb-tC-h0z">
+                            <rect key="frame" x="360" y="20" width="46" height="30"/>
+                            <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="handleLogOutButtonPressed" destination="-1" eventType="touchUpInside" id="Kdr-nt-28R"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="YLb-tC-h0z" secondAttribute="trailing" constant="8" id="1ae-kB-JYA"/>
                         <constraint firstItem="6kt-HV-1V8" firstAttribute="centerX" secondItem="8D2-IY-Op9" secondAttribute="centerX" id="BvK-1Q-o41"/>
                         <constraint firstItem="PsG-Cu-ZZk" firstAttribute="top" secondItem="8D2-IY-Op9" secondAttribute="top" constant="59" id="RR6-af-T7p"/>
                         <constraint firstItem="6kt-HV-1V8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8D2-IY-Op9" secondAttribute="leading" constant="20" id="Xfs-Oj-LW5"/>
@@ -55,6 +64,7 @@
                         <constraint firstItem="PsG-Cu-ZZk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8D2-IY-Op9" secondAttribute="leading" constant="20" id="aPj-oU-SAI"/>
                         <constraint firstItem="6kt-HV-1V8" firstAttribute="top" secondItem="PsG-Cu-ZZk" secondAttribute="bottom" constant="18" id="lev-hh-0H9"/>
                         <constraint firstItem="PsG-Cu-ZZk" firstAttribute="centerX" secondItem="8D2-IY-Op9" secondAttribute="centerX" id="o6Q-20-XLz"/>
+                        <constraint firstItem="YLb-tC-h0z" firstAttribute="top" secondItem="8D2-IY-Op9" secondAttribute="top" constant="20" symbolic="YES" id="xrC-kD-dOd"/>
                     </constraints>
                 </view>
                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="a0c-CP-gD3">
