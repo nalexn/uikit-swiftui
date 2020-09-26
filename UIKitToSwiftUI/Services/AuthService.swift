@@ -15,7 +15,7 @@ class FakeAuthService: AuthService {
     func authenticate(login: String, password: String) -> Promise<AuthToken> {
         return Future<AuthToken, Error> { promise in
             // Simulating actual network request
-            async(after: 2.5) {
+            async(after: 1.5) {
                 promise(.success(AuthToken(value: "token_123456789")))
             }
         }.eraseToAnyPublisher()

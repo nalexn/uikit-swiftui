@@ -37,3 +37,17 @@ extension UIActivityIndicatorView {
         }
     }
 }
+
+extension UITableView {
+    func reuse<C>(_ cellType: C.Type) where C: UITableViewCell {
+        let reuseId = String(describing: cellType)
+        register(cellType, forCellReuseIdentifier: reuseId)
+    }
+    
+    func dequeue<C>(_ cellType: C.Type) -> C where C: UITableViewCell {
+        let reuseId = String(describing: cellType)
+        guard let cell = dequeueReusableCell(withIdentifier: reuseId) as? C
+            else { fatalError("Unable to dequeue \(reuseId)") }
+        return cell
+    }
+}

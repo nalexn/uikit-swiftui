@@ -22,7 +22,7 @@ class FakeTransactionsService: TransactionsService {
         
         return Future<[Transaction], Error> { promise in
             // Simulating actual network request
-            async(after: 1.5) {
+            async(after: 0.5) {
                 promise(.success([
                     Transaction(date: .init(timeIntervalSinceNow: -3000), amount: 53232, description: "Payrol from X inc."),
                     Transaction(date: .init(timeIntervalSinceNow: -2000), amount: -3261, description: "M & Coffee shop"),

@@ -25,6 +25,10 @@ class BaseCoordinator {
         parent?.remove(coordinator: self)
     }
     
+    var onComplete: Void = () {
+        didSet { complete() }
+    }
+    
     // MARK: - Private
     
     private func remove(coordinator: BaseCoordinator) {

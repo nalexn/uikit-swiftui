@@ -36,7 +36,10 @@ class LoginViewController: UIViewController {
             }
         loginField.placeholder = viewModel.textIO.loginTitle
         passwordField.placeholder = viewModel.textIO.passwordTitle
-        
+        setupBindings()
+    }
+    
+    private func setupBindings() {
         cancelBag.collect {
             viewModel.$textIO.map(\.message)
                 .sink { [weak self] message in

@@ -57,6 +57,22 @@ extension Loadable {
         default: break
         }
     }
+    
+    func map<V>(_ transform: (Value) throws -> V) -> Loadable<V> {
+        do {
+            switch self {
+            case .notRequested: return .notRequested
+            case let .failed(error): return .failed(error)
+            case let .isLoading(value, cancelToken):
+                return .isLoading(last: try value.map { try transform($0) },
+                                  cancelToken: cancelToken)
+            case let .loaded(value):
+                return .loaded(try transform(value))
+            }
+        } catch {
+            return .failed(error)
+        }
+    }
 }
 
 extension Loadable: Equatable where Value: Equatable {

@@ -21,7 +21,7 @@ class FakeUserService: UserService {
     func loadUser() -> Promise<User> {
         return Future<User, Error> { promise in
             // Simulating actual network request
-            async(after: 2.5) {
+            async(after: 0.5) {
                 promise(.success(User(name: "John Smith", balance: 242352)))
             }
         }.eraseToAnyPublisher()

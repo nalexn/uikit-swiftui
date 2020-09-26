@@ -31,23 +31,19 @@ final class LoginViewCoordinator: BaseCoordinator {
                 .subscribe(startUserSession)
             startUserSession.first()
                 .map { _ in () }
-                .assign(to: \.onCompleteTrigger, on: self)
+                .assign(to: \.onComplete, on: self)
         }
         
         let viewController = LoginViewController(viewModel: viewModel)
         parent.setContentViewController(viewController)
     }
     
-    private var onCompleteTrigger: Void {
-        didSet { complete() }
-    }
-    
     override func complete() {
         super.complete()
-        guard let loginVC = self.parent?.children
+        guard let vc = self.parent?.children
             .compactMap({ $0 as? LoginViewController })
             .first else { return }
-        loginVC.view.removeFromSuperview()
-        loginVC.removeFromParent()
+        vc.view.removeFromSuperview()
+        vc.removeFromParent()
     }
 }
