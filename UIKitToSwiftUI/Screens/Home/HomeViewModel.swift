@@ -65,9 +65,9 @@ extension HomeViewModel {
         content.data.setIsLoading(cancelToken: token)
     }
     
-    func select(transactionInfo: TransactionInfo) {
+    func select(transaction: TransactionInfo) {
         guard let transaction = content.data.value?.1
-                .first(where: { $0.id == transactionInfo.id })
+                .first(where: { $0.id == transaction.id })
         else { return }
         onSelect.send(transaction)
     }

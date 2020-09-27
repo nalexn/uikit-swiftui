@@ -12,14 +12,19 @@ import Foundation
 final class DetailsViewModel: ObservableObject {
     
     let textIO: TextIO
-    let didFinish = PassthroughSubject<Void, Never>()
+    let onClose = PassthroughSubject<Void, Never>()
+    let onFinish = PassthroughSubject<Void, Never>()
     
     init(container: SessionStageContainer, transaction: Transaction) {
         textIO = .init(transaction: transaction)
     }
     
+    func close() {
+        onClose.send(())
+    }
+    
     deinit {
-        didFinish.send(())
+        onFinish.send(())
     }
 }
 

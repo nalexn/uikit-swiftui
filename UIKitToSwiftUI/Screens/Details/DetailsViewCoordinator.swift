@@ -28,8 +28,13 @@ final class DetailsViewCoordinator: BaseCoordinator {
         let viewModel = DetailsViewModel(container: container, transaction: transaction)
         let viewController = DetailsViewController(viewModel: viewModel)
         parent.present(viewController, animated: true, completion: nil)
-        viewModel.didFinish
-            .assign(to: \.onComplete, on: self)
-            .store(in: &cancelBag)
+        cancelBag.collect {
+            viewModel.onClose
+                .sink { [weak viewController] in
+                    viewController?.dismiss(animated: true, completion: nil)
+                }
+            viewModel.onFinish
+                .assign(to: \.onComplete, on: self)
+        }
     }
 }

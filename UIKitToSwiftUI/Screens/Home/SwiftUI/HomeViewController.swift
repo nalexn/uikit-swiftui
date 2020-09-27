@@ -41,8 +41,12 @@ struct HomeView: View {
                         .padding(EdgeInsets(top: 30, leading: 0, bottom: 0, trailing: 0))
                     Text(viewModel.userInfo.balance)
                         .font(.body)
-                    List(viewModel.transactions) {
-                        TransactionCell(transaction: $0)
+                    List(viewModel.transactions) { transaction in
+                        TransactionCell(transaction: transaction)
+                            .contentShape(Rectangle())
+                            .onTapGesture {
+                                self.viewModel.select(transaction: transaction)
+                            }
                     }
                 }
                 .overlay(logOutButton)

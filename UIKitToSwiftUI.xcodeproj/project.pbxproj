@@ -65,6 +65,7 @@
 		F6C0F35C25211355003B3391 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C0F35A25211355003B3391 /* DetailsViewModel.swift */; };
 		F6C0F361252113F7003B3391 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C0F360252113F7003B3391 /* DetailsViewController.swift */; };
 		F6C0F36525211410003B3391 /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6C0F36425211410003B3391 /* DetailsViewController.xib */; };
+		F6C0F36C25213FF6003B3391 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C0F36B25213FF6003B3391 /* DetailsViewController.swift */; };
 		F6D30F5525128CBA009ABC4E /* CancelBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D30F5425128CBA009ABC4E /* CancelBag.swift */; };
 		F6D30F5625128CBA009ABC4E /* CancelBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D30F5425128CBA009ABC4E /* CancelBag.swift */; };
 /* End PBXBuildFile section */
@@ -106,6 +107,7 @@
 		F6C0F35A25211355003B3391 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		F6C0F360252113F7003B3391 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		F6C0F36425211410003B3391 /* DetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
+		F6C0F36B25213FF6003B3391 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		F6D30F5425128CBA009ABC4E /* CancelBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelBag.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -285,6 +287,7 @@
 				F6C0F3532521130E003B3391 /* DetailsViewCoordinator.swift */,
 				F6C0F35A25211355003B3391 /* DetailsViewModel.swift */,
 				F6C0F35F252113D2003B3391 /* UIKit */,
+				F6C0F36A25213FA5003B3391 /* SwiftUI */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -296,6 +299,14 @@
 				F6C0F36425211410003B3391 /* DetailsViewController.xib */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		F6C0F36A25213FA5003B3391 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				F6C0F36B25213FF6003B3391 /* DetailsViewController.swift */,
+			);
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -438,6 +449,7 @@
 			files = (
 				F672E7A7251F566900F87A2C /* HomeViewController.swift in Sources */,
 				F61E1D332517677E00DD70AA /* CombineHelpers.swift in Sources */,
+				F6C0F36C25213FF6003B3391 /* DetailsViewController.swift in Sources */,
 				F6D30F5625128CBA009ABC4E /* CancelBag.swift in Sources */,
 				F64C4E72250D3C9E00A69FF9 /* User.swift in Sources */,
 				F64C4E73250D3C9E00A69FF9 /* RootCoordinator.swift in Sources */,
