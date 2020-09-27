@@ -23,6 +23,7 @@ final class HomeViewCoordinator: BaseCoordinator {
     }
     
     override func start() {
+        super.start()
         guard let parent = parent else { return }
         let viewModel = HomeViewModel(container: container)
         

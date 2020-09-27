@@ -23,6 +23,7 @@ final class DetailsViewCoordinator: BaseCoordinator {
     }
     
     override func start() {
+        super.start()
         guard let parent = parent else { return }
         let viewModel = DetailsViewModel(container: container, transaction: transaction)
         let viewController = DetailsViewController(viewModel: viewModel)

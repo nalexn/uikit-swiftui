@@ -15,6 +15,7 @@ final class RootCoordinator: BaseCoordinator {
     private var cancelbag = CancelBag()
     
     override func start() {
+        super.start()
         window.rootViewController = rootVC
         window.makeKeyAndVisible()
         

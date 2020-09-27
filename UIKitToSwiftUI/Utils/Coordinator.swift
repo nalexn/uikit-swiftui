@@ -18,11 +18,12 @@ class BaseCoordinator {
     }
     
     func start() {
-        
+        print("\(name) did start")
     }
     
     func complete() {
         parent?.remove(coordinator: self)
+        print("\(name) did complete")
     }
     
     var onComplete: Void = () {
@@ -36,5 +37,9 @@ class BaseCoordinator {
             children.remove(at: index)
         }
         coordinator.parent = nil
+    }
+    
+    private var name: String {
+        String(describing: type(of: self))
     }
 }
