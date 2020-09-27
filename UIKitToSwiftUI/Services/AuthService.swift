@@ -10,6 +10,7 @@ import Combine
 
 typealias RealAuthService = FakeAuthService
 
+#if DEBUG
 class FakeAuthService: AuthService {
     
     func authenticate(login: String, password: String) -> Promise<AuthToken> {
@@ -21,3 +22,4 @@ class FakeAuthService: AuthService {
         }.eraseToAnyPublisher()
     }
 }
+#endif

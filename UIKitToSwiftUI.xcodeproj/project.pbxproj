@@ -22,8 +22,6 @@
 		F61B6D4E250D916300073270 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B6D4C250D916300073270 /* HomeViewModel.swift */; };
 		F61E1D322517677E00DD70AA /* CombineHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61E1D312517677E00DD70AA /* CombineHelpers.swift */; };
 		F61E1D332517677E00DD70AA /* CombineHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61E1D312517677E00DD70AA /* CombineHelpers.swift */; };
-		F61E1D3F251780D200DD70AA /* ContainersForPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61E1D3E251780D200DD70AA /* ContainersForPreview.swift */; };
-		F61E1D40251780D200DD70AA /* ContainersForPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61E1D3E251780D200DD70AA /* ContainersForPreview.swift */; };
 		F61E1D492517E62C00DD70AA /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F61E1D482517E62C00DD70AA /* HomeViewController.xib */; };
 		F61E1D4D2517E64600DD70AA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61E1D4C2517E64600DD70AA /* HomeViewController.swift */; };
 		F64C4E3E250D246700A69FF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C4E3D250D246700A69FF9 /* AppDelegate.swift */; };
@@ -81,7 +79,6 @@
 		F61B6D41250D70C000073270 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F61B6D4C250D916300073270 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		F61E1D312517677E00DD70AA /* CombineHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineHelpers.swift; sourceTree = "<group>"; };
-		F61E1D3E251780D200DD70AA /* ContainersForPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainersForPreview.swift; sourceTree = "<group>"; };
 		F61E1D482517E62C00DD70AA /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		F61E1D4C2517E64600DD70AA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F64C4E3A250D246700A69FF9 /* UIKitApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -249,7 +246,6 @@
 				F64C4E6E250D369500A69FF9 /* ContainerProtocols.swift */,
 				F64C4E6A250D358700A69FF9 /* LoginStageContainer.swift */,
 				F64C4E6C250D362800A69FF9 /* SessionStageContainer.swift */,
-				F61E1D3E251780D200DD70AA /* ContainersForPreview.swift */,
 			);
 			path = DIContainers;
 			sourceTree = "<group>";
@@ -406,7 +402,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F61E1D3F251780D200DD70AA /* ContainersForPreview.swift in Sources */,
 				F64C4E57250D27A800A69FF9 /* User.swift in Sources */,
 				F61B6D4D250D916300073270 /* HomeViewModel.swift in Sources */,
 				F672E7A1251F4F8B00F87A2C /* Formatters.swift in Sources */,
@@ -442,7 +437,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F672E7A7251F566900F87A2C /* HomeViewController.swift in Sources */,
-				F61E1D40251780D200DD70AA /* ContainersForPreview.swift in Sources */,
 				F61E1D332517677E00DD70AA /* CombineHelpers.swift in Sources */,
 				F6D30F5625128CBA009ABC4E /* CancelBag.swift in Sources */,
 				F64C4E72250D3C9E00A69FF9 /* User.swift in Sources */,

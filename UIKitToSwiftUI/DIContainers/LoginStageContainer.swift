@@ -7,10 +7,11 @@
 //
 
 struct RealLoginStageContainer: LoginStageContainer {
-    
-    let authService: AuthService
-    
-    init() {
-        authService = RealAuthService()
-    }
+    let authService: AuthService = RealAuthService()
 }
+
+#if DEBUG
+struct FakeLoginStageContainer: LoginStageContainer {
+    let authService: AuthService = FakeAuthService()
+}
+#endif

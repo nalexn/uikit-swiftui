@@ -12,7 +12,12 @@ final class RootCoordinator: BaseCoordinator {
     
     private lazy var window = UIWindow(frame: UIScreen.main.bounds)
     private lazy var rootVC = UIViewController()
+    private let containerBuilder: ContainerBuilder
     private var cancelbag = CancelBag()
+    
+    init(containerBuilder: ContainerBuilder) {
+        self.containerBuilder = containerBuilder
+    }
     
     override func start() {
         super.start()
@@ -26,7 +31,7 @@ final class RootCoordinator: BaseCoordinator {
     }
     
     private func coordinateToLogIn() {
-        let container = RealLoginStageContainer()
+        let container = containerBuilder.login()
         let loginCoordinator = LoginViewCoordinator(container: container, parent: rootVC)
         loginCoordinator.startUserSession
             .first()
@@ -38,7 +43,7 @@ final class RootCoordinator: BaseCoordinator {
     }
     
     private func coordinateToHome(authToken: AuthToken) {
-        let container = RealSessionStageContainer(authToken: authToken)
+        let container = containerBuilder.session(authToken)
         let sessionCoordinator = HomeViewCoordinator(container: container, parent: rootVC)
         sessionCoordinator.endUserSession
             .first()

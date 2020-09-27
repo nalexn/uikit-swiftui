@@ -10,6 +10,7 @@ import Combine
 
 typealias RealTransactionsService = FakeTransactionsService
 
+#if DEBUG
 class FakeTransactionsService: TransactionsService {
     
     private let token: AuthToken
@@ -32,3 +33,4 @@ class FakeTransactionsService: TransactionsService {
         }.eraseToAnyPublisher()
     }
 }
+#endif

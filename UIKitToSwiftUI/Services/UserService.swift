@@ -10,6 +10,7 @@ import Combine
 
 typealias RealUserService = FakeUserService
 
+#if DEBUG
 class FakeUserService: UserService {
     
     private let token: AuthToken
@@ -27,3 +28,4 @@ class FakeUserService: UserService {
         }.eraseToAnyPublisher()
     }
 }
+#endif

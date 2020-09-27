@@ -20,3 +20,9 @@ protocol SessionStageContainer {
     var userService: UserService { get }
     var transactionsService: TransactionsService { get }
 }
+
+// Dependencies builder
+struct ContainerBuilder {
+    let login: () -> LoginStageContainer
+    let session: (AuthToken) -> SessionStageContainer
+}

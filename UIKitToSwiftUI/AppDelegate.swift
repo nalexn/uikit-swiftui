@@ -14,7 +14,14 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     private var rootCoordinator: BaseCoordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        rootCoordinator = RootCoordinator()
+        
+        let builder = ContainerBuilder(login: {
+            RealLoginStageContainer()
+        }, session: { authToken in
+            RealSessionStageContainer(authToken: authToken)
+        })
+
+        rootCoordinator = RootCoordinator(containerBuilder: builder)
         rootCoordinator?.start()
         return true
     }

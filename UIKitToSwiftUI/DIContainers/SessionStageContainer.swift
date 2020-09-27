@@ -16,3 +16,16 @@ struct RealSessionStageContainer: SessionStageContainer {
         self.transactionsService = RealTransactionsService(token: authToken)
     }
 }
+
+#if DEBUG
+struct FakeSessionStageContainer: SessionStageContainer {
+    
+    let userService: UserService
+    let transactionsService: TransactionsService
+    
+    init(authToken: AuthToken = AuthToken(value: "")) {
+        self.userService = FakeUserService(token: authToken)
+        self.transactionsService = FakeTransactionsService(token: authToken)
+    }
+}
+#endif
