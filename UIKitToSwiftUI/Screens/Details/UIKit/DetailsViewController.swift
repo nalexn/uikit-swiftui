@@ -36,6 +36,6 @@ class DetailsViewController: UIViewController {
     }
     
     @IBAction func handleCloseButtonPressed() {
-        dismiss(animated: true, completion: nil)
+        viewModel.close()
     }
 }
