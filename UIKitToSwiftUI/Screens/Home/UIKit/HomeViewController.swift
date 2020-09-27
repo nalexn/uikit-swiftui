@@ -89,6 +89,8 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let transactionInfo = viewModel.transactions[indexPath.row]
+        viewModel.select(transactionInfo: transactionInfo)
     }
 }
 

@@ -13,6 +13,7 @@ final class HomeViewCoordinator: BaseCoordinator {
     
     private let container: SessionStageContainer
     private weak var parent: UIViewController?
+    private weak var viewController: UIViewController?
     private var cancelBag = CancelBag()
     let endUserSession = PassthroughSubject<Void, Never>()
     
@@ -26,6 +27,9 @@ final class HomeViewCoordinator: BaseCoordinator {
         let viewModel = HomeViewModel(container: container)
         
         cancelBag.collect {
+            viewModel.onSelect.sink { [weak self] transaction in
+                self?.showDetails(transaction: transaction)
+            }
             viewModel.onLogOut
                 .subscribe(endUserSession)
             endUserSession
@@ -33,7 +37,16 @@ final class HomeViewCoordinator: BaseCoordinator {
         }
         
         let viewController = HomeViewController(viewModel: viewModel)
+        self.viewController = viewController
         parent.setContentViewController(viewController)
+    }
+    
+    private func showDetails(transaction: Transaction) {
+        guard let viewController = viewController
+        else { return }
+        let coordinator = DetailsViewCoordinator(
+            container: container, parent: viewController, transaction: transaction)
+        self.coordinate(to: coordinator)
     }
     
     override func complete() {

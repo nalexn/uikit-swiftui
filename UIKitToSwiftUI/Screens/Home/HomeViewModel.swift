@@ -15,6 +15,7 @@ final class HomeViewModel: ObservableObject {
     private let transactionsService: TransactionsService
     private var cancelBag = CancelBag()
     
+    let onSelect = PassthroughSubject<Transaction, Never>()
     let onLogOut = PassthroughSubject<Void, Never>()
     
     @Published var textIO = TextIO()
@@ -62,6 +63,13 @@ extension HomeViewModel {
                 self?.content.data = data
             }
         content.data.setIsLoading(cancelToken: token)
+    }
+    
+    func select(transactionInfo: TransactionInfo) {
+        guard let transaction = content.data.value?.1
+                .first(where: { $0.id == transactionInfo.id })
+        else { return }
+        onSelect.send(transaction)
     }
     
     func logOut() {
