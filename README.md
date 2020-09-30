@@ -1,6 +1,6 @@
 # UIKit to SwiftUI
 
-A sample project build using MVVM-R architecture where ViewModels are fully compatible with both UIKit and SwiftUI views.
+A sample project built using MVVM-R architecture where ViewModels are fully compatible with both UIKit and SwiftUI views.
 
 Illustrates the concepts denoted in the [article](https://nalexn.github.io/uikit-switfui/?utm_source=github).
 
